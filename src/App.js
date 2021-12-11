@@ -1,6 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Articles from "./Articles";
 import About from "./About";
@@ -8,24 +11,14 @@ import About from "./About";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <div className="navbar">
-          <Link to="/" className="navItem">
-            Projects
-          </Link>
-          <Link to="/articles" className="navItem">
-            Articles
-          </Link>
-          <Link to="/about" className="navItem">
-            About
-          </Link>
-        </div>
-      </div>
+      <Container className="App" fluid>
+        <Navbar />
       <Routes>
         <Route exact path="/" element={<Projects />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      </Container>
     </BrowserRouter>
   );
 }
