@@ -1,35 +1,58 @@
+import {
+  faAddressCard,
+  faFolder,
+  faNewspaper,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Navbar() {
   return (
-    <Container className="py-2">
-      <Row>
-          <Col xs={0} sm={8} />
-        <Col>
-          <Link to="/" className="navItem" style={{ textDecoration: "none" }}>
-            Projects
-          </Link>
-        </Col>{" "}
-        <Col>
+    <Container className="navbar py-2 col-sm-1 vh-100 position-fixed">
+      <Row className="align-items-center h-100">
+        
+        
           <Link
-            to="/articles"
+            activeClass="active"
+            to="projectsTitle"
+            spy={true}
+            smooth={true}
+            duration={500}
             className="navItem"
             style={{ textDecoration: "none" }}
           >
-            Articles
+            <FontAwesomeIcon icon={faFolder} style={{color: "white"}} />{' '}
+            <p>Projects</p>
           </Link>
-        </Col>
-        <Col>
-          <Link
-            to="/about"
-            className="navItem"
-            style={{ textDecoration: "none" }}
-          >
-            About
-          </Link>
-        </Col>
+        
+
+        <Link
+          activeClass="active"
+          to="articlesTitle"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="navItem"
+          style={{ textDecoration: "none" }}
+        >
+          <FontAwesomeIcon icon={faNewspaper} style={{color: "white"}} />{' '}
+          <p>Articles</p>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="aboutTitle"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="navItem"
+          style={{ textDecoration: "none" }}
+        >
+          <FontAwesomeIcon icon={faAddressCard} style={{ color: "white" }} />
+          <p>About</p>
+        </Link>
       </Row>
     </Container>
   );

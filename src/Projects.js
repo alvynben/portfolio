@@ -7,7 +7,7 @@ const content = [
   {
     link: "https://t.me/fridgetbot",
     image:
-      "https://cdn5.telesco.pe/file/YQuoodTuhi62WI4sgIhouKh6lWmnnTs8WqDv2P13qmbl4w-GkTYeeTJJAYpIZvW3s57LBywzrzmn5SnFqFIIgn_iyuiDdqc5a2ckV8-s0jS5K70uj3lNr4KWL_YqFN7vPoo7-pP1_6dQFjJY03SVeUQrqZ6et6UywSwknN0l8tQTAwKyI-izhXKcymaaxhBjd0ydRlsaxe_i2OqZhdLB7KpHddT4ygULENsKpCe2B3H83yApiCXlNYsfM_l7SsWz6YGoRCZJC07g8zw5qNln10sI5MrYrpfEP6g8EmBv2D4gCukBi41oz3oBW4UiFQh0pvj9I9tWfLX44i2lrgQQrQ.jpg",
+      "https://logos-world.net/wp-content/uploads/2021/03/Telegram-Logo.png",
     title: "Telegram Bot",
     category: "Python | Telegram",
   },
@@ -28,9 +28,9 @@ const content = [
 export default function Projects() {
   return (
     <Container>
-      <h1>Projects</h1>
+      <h1 id="projectsTitle">Projects</h1>
       <Container className="projects" fluid>
-        <Row className="g-0">
+        <Row className="g-0 justify-content-around">
           {content.map((data) => {
             return (
               <Thumbnail

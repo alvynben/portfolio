@@ -2,22 +2,23 @@ import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "./Navbar";
-import Projects from "./Projects";
-import Articles from "./Articles";
-import About from "./About";
+import LandingPage from "./LandingPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Container className="App" fluid>
-        <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Projects />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+        <Row>
+          <Col sm={1} />
+          <Col className="col-sm-8 mx-auto">
+          <Navbar />
+            <Routes>
+              <Route exact path="/" element={<LandingPage />} />
+            </Routes>
+          </Col>
+        </Row>
       </Container>
     </BrowserRouter>
   );

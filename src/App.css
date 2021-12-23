@@ -11,6 +11,19 @@ a:hover {
   color: grey;
 }
 
+/* Navbar */
+
+.navbar {
+  z-index: 1;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: black;
+}
+
+.navItem {
+  color: #ffffff !important;
+}
+
 /* Thumbnail */
 
 .project {
