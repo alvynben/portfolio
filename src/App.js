@@ -11,9 +11,10 @@ function App() {
     <BrowserRouter>
       <Container className="App" fluid>
         <Row>
-          <Col sm={1} />
-          <Col className="col-sm-8 mx-auto">
-          <Navbar />
+          <Col sm={1}>
+            <Navbar />
+          </Col>
+          <Col sm={8} className="mx-auto">
             <Routes>
               <Route exact path="/" element={<LandingPage />} />
             </Routes>

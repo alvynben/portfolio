@@ -1,6 +1,16 @@
 .App {
   text-align: center;
   width: 100%;
+  background: #fcd612;
+  font-family: 'Jetbrains Mono', monospace;
+}
+
+h1 {
+  color: #d61a1f;
+}
+
+p {
+  color: #000;
 }
 
 a {
@@ -9,6 +19,10 @@ a {
 
 a:hover {
   color: grey;
+}
+
+.container {
+  max-width: max-content;
 }
 
 /* Navbar */
@@ -21,48 +35,136 @@ a:hover {
 }
 
 .navItem {
+  position: relative;
   color: #ffffff !important;
+  width: 100%;
+  height: 3rem;
+}
+
+.navItem.active .navItemText {
+  color: #d61a1f;
+  transition: color 50ms;
+}
+
+.navItemText:hover {
+  color: #d61a1f;
+}
+
+.navItemText {
+  color: #fff;
 }
 
 /* Thumbnail */
 
 .project {
-  position: relative;
+  z-index: 0;
   background-color: white;
   /* border-radius: 4px; */
   border: 0.1px solid black;
   /* box-shadow: 0.1rem 0.1rem #888888; */
   transition: box-shadow 0.1s;
+  transform: rotate3d(1, 1, 2, 5deg);
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
 
 .project:hover {
+  z-index: 0;
   box-shadow: 0.3rem 0.3rem #888888;
   transition: box-shadow 0.1s;
+  transform: rotate3d(1, 1, 1, 0deg);
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
 
 .project-image {
-  height: 20rem;
-}
-
-.project-image img {
-  width: 100%;
+  z-index: 0;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
   height: 100%;
+  max-height: 10em;
   object-fit: cover;
   overflow: hidden;
 }
 
 .project-text {
+  z-index: 0;
   position: absolute;
-  background: #ffffff;
+  background: #fcd612;
   left: 1rem;
-  color: black;
 }
 
 .project-title {
+  z-index: 0;
   bottom: 3rem;
+  color: #d61a1f;
 }
 
 .project-category {
+  z-index: 0;
   bottom: 1rem;
+}
+
+.project-description {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+}
+
+.project-description p {
+  z-index: 1;
+  color: #fff;
+}
+
+/* About */
+
+.smugglerpic {
+  position: relative;
+}
+
+.blaster1 {
+  position: relative;
+  background-color: #d61a1f;
+  width: 20px;
+  height: 5px;
+  left: 80px;
+  top: 75px;
+  content: "wah";
+  animation-name: blasterturn;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+.blaster2 {
+  display: none;
+  position: relative;
+  background-color: #d61a1f;
+  width: 20px;
+  height: 5px;
+  left: 105px;
+  top: 75px;
+  content: "wah";
+  animation-name: blasterturn;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blasterfire {
+  from {left: 105px}
+  to {left: -200px}
+}
+
+@keyframes blasterturn {
+  0% {left: 10%; top: 45%; transform: skew(10deg, 10deg)}
+  20%, 100% {left: -25vw; top: 30%; transform: skew(10deg, 10deg)}
 }
 
