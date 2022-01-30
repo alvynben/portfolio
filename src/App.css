@@ -158,19 +158,31 @@ a:hover {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.blaster-container {
+  position: initial;
+  width: auto;
+  height: auto;
+}
+
 .blaster1 {
+  display: none;
   position: relative;
   background-color: #d61a1f;
   width: 20px;
   height: 5px;
   left: 80px;
-  top: 75px;
+  top: 220px;
   content: "wah";
   animation-name: blasterturn;
+  -webkit-animation-name: blasterturn;
   animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
   animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
   animation-delay: 0s;
+  -webkit-animation-delay: 0s;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .blaster2 {
@@ -195,8 +207,8 @@ a:hover {
 }
 
 @keyframes blasterturn {
-  0% {left: 10%; top: 45%; transform: skew(10deg, 10deg)}
-  20%, 100% {left: -25vw; top: 30%; transform: skew(10deg, 10deg)}
+  0% {left: 10%; inset: 45% 10%; transform: skew(10deg, 10deg)}
+  20%, 100% {left: -25vw; inset: 30% -25vw; transform: skew(10deg, 10deg)}
 }
 
 /* Projects */
@@ -213,4 +225,11 @@ a:hover {
 
 .articles-container {
   min-height: 100vh;
+}
+
+/* Playground */
+
+canvas {
+  position: absolute;
+  top: 0;
 }

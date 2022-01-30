@@ -23,7 +23,7 @@ export default function About() {
         </Col>
         <Col sm={12}>
           <Row className="align-items-center">
-            <Col sm={6} className="align-self-center">
+            <Col sm={6} className="blaster-container align-self-center">
               <div className="blaster1" />
               <div className="blaster2" />
               <img src={alvin01} className="smuggler-pic w-100 img-rounded" alt="Alvin Ben Abraham" />

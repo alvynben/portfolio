@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "./Navbar";
 import LandingPage from "./LandingPage";
+import Playground from "./Playground";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -25,13 +26,29 @@ function App() {
   return (
     <BrowserRouter>
       {isMobile & !proceedAnyway ? (
-        <div style={{display: "flex", flexDirection: "column",justifyContent: "center", alignItems: "center", background: "#fcd612", height: "100vh", textAlign: "center"}}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#fcd612",
+            height: "100vh",
+            textAlign: "center",
+          }}
+        >
           <p>Oops!</p>
           <p>We're still working on the mobile site</p>
           <p>Visit us on desktop instead!</p>
-          <button style={{color: "#d61a1f"}} onClick={() => {
-            setProceedAnyway(true);
-          }}> Click here if you'd like to see the site anyway!</button>
+          <button
+            style={{ color: "#d61a1f" }}
+            onClick={() => {
+              setProceedAnyway(true);
+            }}
+          >
+            {" "}
+            Click here if you'd like to see the site anyway!
+          </button>
         </div>
       ) : (
         <Container className="App" fluid>
@@ -42,6 +59,7 @@ function App() {
             <Col sm={8} className="mx-auto">
               <Routes>
                 <Route exact path="/" element={<LandingPage />} />
+                <Route exact path="/play" element={<Playground />} />
               </Routes>
             </Col>
           </Row>
