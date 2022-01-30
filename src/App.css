@@ -143,6 +143,10 @@ a:hover {
   color: #fff;
 }
 
+.project-description a {
+  color: #d61a1f;
+}
+
 /* About */
 
 .about-container {
