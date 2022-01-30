@@ -55,7 +55,7 @@ export default function Thumbnail(props) {
           return <p>{content}</p>;
         })}
         <p>
-          See more <a href={props.link}>HERE</a>
+          See more <a href={props.link} target="_blank" rel="noreferrer">HERE</a>
         </p>
       </animated.div>
     </animated.div>
