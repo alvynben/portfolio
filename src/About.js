@@ -4,8 +4,8 @@ import alvin01 from "./alvin01.jpg";
 
 export default function About() {
   return (
-    <Container className="vh-100 my-2 about-container" fluid>
-      <Row className="vh-100">
+    <Container className="py-4 about-container" id="about-container" fluid>
+      <Row className="h-100">
         <Col sm={12} className="align-self-center">
           <h1 id="aboutTitle">About</h1>
         </Col>
@@ -23,12 +23,12 @@ export default function About() {
         </Col>
         <Col sm={12}>
           <Row className="align-items-center">
-            <Col sm={6} className="smuggler-pic align-self-center">
+            <Col sm={6} className="align-self-center">
               <div className="blaster1" />
               <div className="blaster2" />
-              <img src={alvin01} className="w-100 img-rounded" alt="Alvin" />
-              <p>
-                <em>A real picture of a smuggler </em>
+              <img src={alvin01} className="smuggler-pic w-100 img-rounded" alt="Alvin" />
+              <p className="smuggler-pic-text">
+                <em>A real picture of a NUS student, circa 2021 </em>
               </p>
             </Col>
             <Col sm={6} className="align-self-center">

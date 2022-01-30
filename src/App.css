@@ -3,6 +3,7 @@
   width: 100%;
   background: #fcd612;
   font-family: 'Jetbrains Mono', monospace;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -22,7 +23,13 @@ a:hover {
 }
 
 .container {
+  display: flex;
   max-width: max-content;
+  max-height: max-content;
+}
+
+.container-fluid > .row {
+  min-height: 100vh;
 }
 
 /* Navbar */
@@ -51,13 +58,57 @@ a:hover {
 }
 
 .navItemText {
+  font-size: 1vw;
   color: #fff;
 }
 
 /* Thumbnail */
 
+.thumbnail {
+  position: relative;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.thumbnail-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 35vh;
+  height: 40vh;
+  padding: 1em;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  border-radius: 5px 5px 5px 5px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.thumbnail-description p {
+  color: #fff;
+  vertical-align: middle;
+}
+
+.thumbnail-title {
+  bottom: 3rem;
+  color: #d61a1f;
+}
+
+.thumbnail-category {
+  bottom: 1rem;
+  color: #fff;
+}
+
+.thumbnail-text {
+  background-color: #000;
+  padding: 5px;
+  max-height: 10vh;
+}
+
 .project {
-  z-index: 0;
+  position: relative;
   background-color: white;
   /* border-radius: 4px; */
   border: 0.1px solid black;
@@ -70,7 +121,6 @@ a:hover {
 }
 
 .project:hover {
-  z-index: 0;
   box-shadow: 0.3rem 0.3rem #888888;
   transition: box-shadow 0.1s;
   transform: rotate3d(1, 1, 1, 0deg);
@@ -80,51 +130,28 @@ a:hover {
 }
 
 .project-image {
-  z-index: 0;
   min-width: 100%;
-  max-width: 100%;
+  max-width: 2vw;
   min-height: 100%;
   height: 100%;
-  max-height: 10em;
+  max-height: 20vh;
   object-fit: cover;
   overflow: hidden;
 }
 
-.project-text {
-  z-index: 0;
-  position: absolute;
-  background: #fcd612;
-  left: 1rem;
-}
-
-.project-title {
-  z-index: 0;
-  bottom: 3rem;
-  color: #d61a1f;
-}
-
-.project-category {
-  z-index: 0;
-  bottom: 1rem;
-}
-
-.project-description {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: #000;
-  color: #fff;
-}
-
 .project-description p {
-  z-index: 1;
   color: #fff;
 }
 
 /* About */
 
-.smugglerpic {
-  position: relative;
+.about-container {
+  min-height: 100vh;
+}
+
+.smuggler-pic {
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .blaster1 {
@@ -136,7 +163,7 @@ a:hover {
   top: 75px;
   content: "wah";
   animation-name: blasterturn;
-  animation-duration: 2.5s;
+  animation-duration: 1.5s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -168,3 +195,18 @@ a:hover {
   20%, 100% {left: -25vw; top: 30%; transform: skew(10deg, 10deg)}
 }
 
+/* Projects */
+
+.projects-container {
+  min-height: 100vh;
+}
+
+.projects {
+  position: relative;
+}
+
+/* Articles */
+
+.articles-container {
+  min-height: 100vh;
+}

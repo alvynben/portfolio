@@ -1,13 +1,16 @@
 import React from "react";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Thumbnail from "./Thumbnail";
 import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
 const content = [
   {
     link: "https://t.me/fridgetbot",
     image:
-      "https://logos-world.net/wp-content/uploads/2021/03/Telegram-Logo.png",
+      "https://enews.hamariweb.com/wp-content/uploads/2021/09/Telegram.png",
     title: "Telegram Bot",
     category: "Python | Telegram",
     description: [
@@ -21,8 +24,8 @@ const content = [
     title: "Voca SG",
     category: "ReactJS | Material",
     description: [
-      "Hosted a Python Telegram Bot via Heroku",
-      "Linked bot to SQL Database to store data",
+      "Worked on ReactJS frontend and Python/NodeJS backend",
+      "Currently working on improving backend scraper!",
     ],
   },
   {
@@ -31,41 +34,37 @@ const content = [
     title: "Interseed Co.",
     category: "ReactTSX | Bootstrap",
     description: [
-      "Hosted a Python Telegram Bot via Heroku",
-      "Linked bot to SQL Database to store data",
+      "Sole Frontend Developer for Interseed Co.",
+      "Created animated landing page that increased overall user engagement by 25%",
+      "Currently working on creating user tutorial for Interseed",
     ],
   },
   {
-    link: "https://cde.nus.edu.sg/idp/student-alumni/student-life#attachment_5273",
+    link: "https://www.ideate2021.com/home",
     image:
       "https://cde.nus.edu.sg/idp/wp-content/uploads/sites/6/2021/06/Outreach-1024x683.jpg",
-    title: "iDP Club",
-    category: "Outreach Head",
+    title: "IDEATE 2021",
+    category: "Events | Marketing",
     description: [
-      "Hosted a Python Telegram Bot via Heroku",
-      "Linked bot to SQL Database to store data",
+      "Created brand new nationwide ideathon with more than 200 participants",
+      "Gained >$5000 in sponsorships without prior recognition",
     ],
   },
-  {
-    link: "https://cde.nus.edu.sg/idp/student-alumni/student-life#attachment_5273",
-    image:
-      "https://cde.nus.edu.sg/idp/wp-content/uploads/sites/6/2021/06/Outreach-1024x683.jpg",
-    title: "iDP Club",
-    category: "Outreach Head",
-    description: [
-      "Hosted a Python Telegram Bot via Heroku",
-      "Linked bot to SQL Database to store data",
-    ],
-  }
 ];
 
 export default function Projects() {
   return (
-    <Container className="vh-100 my-2 projects-container">
-      <Row className="vh-100">
+    <Container
+      className="my-2 projects-container"
+      id="projects-container"
+      fluid
+    >
+      <Row className="h-100">
         <Col sm={3} className="align-self-center">
           <h1 id="projectsTitle">Projects</h1>
-          <p><em> A few of the fun projects I've worked on. </em></p>
+          <p>
+            <em> A few of the fun projects I've worked on. </em>
+          </p>
           <p>
             <small>
               {" "}
@@ -73,10 +72,34 @@ export default function Projects() {
               frontend developer.{" "}
             </small>
           </p>
+
+          <p>
+            <small> See more at my: </small>
+          </p>
+          <a
+            href="https://www.linkedin.com/in/alvinbenabraham"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-2"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="3x" color="#d61a1f" />
+          </a>
+
+          <a
+            href="https://www.github.com/alvynben"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-2"
+          >
+            <FontAwesomeIcon icon={faGithub} size="3x" color="#d61a1f" />
+          </a>
         </Col>
+
         <Col sm={9} className="align-self-center">
+          <small> [Scroll over them to learn more!]</small>
+
           <Container className="projects" fluid>
-            <Row className="g-0 justify-content-around">
+            <Row className="g-0 justify-content-around align-items-center">
               {content.map((data) => {
                 return (
                   <Thumbnail
@@ -88,39 +111,6 @@ export default function Projects() {
                   />
                 );
               })}
-              {/* <Thumbnail
-            link="https://t.me/fridgetbot"
-            image="http://twitter-image-url.jpg"
-            title="Twitter Newsfeed"
-            category="Mobile App"
-          />
-
-          <Thumbnail
-            link="/airbnb"
-            image="http://airbnb-image-url.jpg>"
-            title="Airbnb Experiences"
-            category="Website"
-          />
-
-          <Thumbnail
-            link="/photoshop"
-            image="http://photoshop-image-url.jpg"
-            title="Photoshop Redesign"
-            category="Desktop App"
-          />
-          <Thumbnail
-            link="/airbnb"
-            image="http://airbnb-image-url.jpg>"
-            title="Airbnb Experiences"
-            category="Website"
-          />
-
-          <Thumbnail
-            link="/photoshop"
-            image="http://photoshop-image-url.jpg"
-            title="Photoshop Redesign"
-            category="Desktop App"
-          /> */}
             </Row>
           </Container>
         </Col>
