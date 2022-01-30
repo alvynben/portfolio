@@ -26,7 +26,7 @@ export default function About() {
             <Col sm={6} className="align-self-center">
               <div className="blaster1" />
               <div className="blaster2" />
-              <img src={alvin01} className="smuggler-pic w-100 img-rounded" alt="Alvin" />
+              <img src={alvin01} className="smuggler-pic w-100 img-rounded" alt="Alvin Ben Abraham" />
               <p className="smuggler-pic-text">
                 <em>A real picture of a NUS student, circa 2021 </em>
               </p>
