@@ -82,7 +82,7 @@ export default function Projects() {
             rel="noreferrer"
             className="mx-2"
           >
-            <FontAwesomeIcon icon={faLinkedin} size="3x" color="#d61a1f" />
+            <FontAwesomeIcon icon={faLinkedin} size="3x" color="#3366ff" />
           </a>
 
           <a
@@ -91,12 +91,12 @@ export default function Projects() {
             rel="noreferrer"
             className="mx-2"
           >
-            <FontAwesomeIcon icon={faGithub} size="3x" color="#d61a1f" />
+            <FontAwesomeIcon icon={faGithub} size="3x" color="#ffffff" />
           </a>
         </Col>
 
         <Col sm={9} className="align-self-center">
-          <small> [Scroll over them to learn more!]</small>
+          <small style={{color: "#fff"}}> [Scroll over them to learn more!]</small>
 
           <Container className="projects" fluid>
             <Row className="g-0 justify-content-around align-items-center">

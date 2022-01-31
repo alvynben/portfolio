@@ -1,21 +1,23 @@
 .App {
   text-align: center;
   width: 100%;
-  background: #fcd612;
+  background: #000;
   font-family: 'Jetbrains Mono', monospace;
   box-sizing: border-box;
 }
 
 h1 {
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
 }
 
 p {
-  color: #000;
+  color: #fff;
 }
 
 a {
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
 }
 
 a:hover {
@@ -38,7 +40,7 @@ a:hover {
   z-index: 1;
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: black;
+  background-color: #111;
 }
 
 .navItem {
@@ -49,12 +51,14 @@ a:hover {
 }
 
 .navItem.active .navItemText {
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
   transition: color 50ms;
 }
 
 .navItemText:hover {
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
 }
 
 .navItemText {
@@ -66,7 +70,7 @@ a:hover {
 
 .thumbnail {
   position: relative;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px !important;
 }
 
 .thumbnail-description {
@@ -81,6 +85,7 @@ a:hover {
   padding: 1em;
   /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   border-radius: 5px 5px 5px 5px;
+  border: #fff 5px solid;
   background: #000;
   color: #fff;
   text-align: center;
@@ -93,7 +98,8 @@ a:hover {
 
 .thumbnail-title {
   bottom: 3rem;
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
 }
 
 .thumbnail-category {
@@ -144,7 +150,8 @@ a:hover {
 }
 
 .project-description a {
-  color: #d61a1f;
+  /* color: #d61a1f; */
+  color: #3366ff;
 }
 
 /* About */

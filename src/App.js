@@ -32,7 +32,7 @@ function App() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            background: "#fcd612",
+            background: "#000",
             height: "100vh",
             textAlign: "center",
           }}
