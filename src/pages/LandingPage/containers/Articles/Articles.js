@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Thumbnail from "./Thumbnail";
-import ideatePic from "./ideate.png"
+import Thumbnail from "components/Thumbnail/Thumbnail";
+import ideatePic from "assets/ideate.png"
+import "./Articles.css";
 
 const content = [
   {

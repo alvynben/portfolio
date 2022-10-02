@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTelegram,
-  faGoogle,
-  faOldRepublic,
 } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import alvin01 from "./alvin01.jpg";
+import alvin01 from "assets/alvin01.jpg"
+import './About.css'
 
 export default function About() {
   return (
@@ -16,13 +15,13 @@ export default function About() {
           <h1 id="aboutTitle">About</h1>
         </Col>
         <Col sm={12} className="align-self-start">
-          <blockquote class="blockquote text-center">
+          <blockquote className="blockquote text-center">
             <p>
               Kid, I've flown from one side of this galaxy to the other. There's
               no mystical energy field that controls my destiny. It's all a lot
               of simple tricks and nonsense.{" "}
             </p>
-            <p class="blockquote-footer">
+            <p className="blockquote-footer">
               Han Solo in <cite title="Source Title">A New Hope</cite>
             </p>
           </blockquote>

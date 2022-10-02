@@ -1,0 +1,9 @@
+/* Projects */
+
+.projects-container {
+    min-height: 100vh;
+  }
+  
+  .projects {
+    position: relative;
+  }

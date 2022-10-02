@@ -1,6 +1,5 @@
 import {
   faAddressCard,
-  faArrowAltCircleRight,
   faBars,
   faFolder,
   faGamepad,
@@ -10,13 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { React, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [viewLocation, setViewLocation] = useState("about-container");
 
   const moveToId = (id) => {
     const container = document.getElementById(id);
-    window.scrollBy(0, container.getBoundingClientRect().top);
+    if (container) window.scrollBy(0, container.getBoundingClientRect().top);
+    else window.scrollBy(0,0);
   };
 
   useEffect(() => {

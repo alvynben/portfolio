@@ -1,10 +1,9 @@
 import React from "react";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Thumbnail from "./Thumbnail";
+import Thumbnail from "components/Thumbnail/Thumbnail";
 import { Col, Container, Row } from "react-bootstrap";
-import "./App.css";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import "./Projects.css";
 
 const content = [
   {

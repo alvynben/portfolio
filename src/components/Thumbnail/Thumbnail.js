@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "./App.css";
+import "./Thumbnail.css";
 
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";

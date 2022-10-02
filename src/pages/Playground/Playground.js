@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useRef } from "react";
 import * as THREE from "three/src/Three.js";
+import "./Playground.css";
 
 function Playground() {
   const canvasRef = useRef(null);
