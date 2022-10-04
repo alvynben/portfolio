@@ -16,6 +16,19 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const [viewLocation, setViewLocation] = useState("about-container");
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
 
   const moveToId = (id) => {
     const container = document.getElementById(id);
@@ -49,34 +62,40 @@ export default function Navbar() {
   // TODO: Refactor to combine logic for both navbars
   return (
     <>
-      <Fab mainButtonStyles={{backgroundColor: '#36f'}} icon={<FontAwesomeIcon icon={faPlus} />} event="click">
-        <Action
-          style={{ display: "block" }}
-          text="About"
-          onClick={() => {
-            navigateTo("/about");
-            setViewLocation("about-container");
-          }}
+      {isMobile && (
+        <Fab
+          mainButtonStyles={{ backgroundColor: "#36f" }}
+          icon={<FontAwesomeIcon icon={faPlus} />}
+          event="click"
         >
-          <FontAwesomeIcon icon={faAddressCard} style={{ color: "white" }} />
-          <div>
-            <p style={{ fontSize: "0.5em" }}>About</p>
-          </div>
-        </Action>
-        <Action
-          style={{ display: "block" }}
-          text="Resume"
-          onClick={() => {
-            navigateTo("/");
-            setViewLocation("resume-container");
-          }}
-        >
-          <FontAwesomeIcon icon={faFilePdf} style={{ color: "white" }} />
-          <div>
-            <p style={{ fontSize: "0.5em" }}>Resume</p>
-          </div>
-        </Action>
-      </Fab>
+          <Action
+            style={{ display: "block" }}
+            text="About"
+            onClick={() => {
+              navigateTo("/about");
+              setViewLocation("about-container");
+            }}
+          >
+            <FontAwesomeIcon icon={faAddressCard} style={{ color: "white" }} />
+            <div>
+              <p style={{ fontSize: "0.5em" }}>About</p>
+            </div>
+          </Action>
+          <Action
+            style={{ display: "block" }}
+            text="Resume"
+            onClick={() => {
+              navigateTo("/");
+              setViewLocation("resume-container");
+            }}
+          >
+            <FontAwesomeIcon icon={faFilePdf} style={{ color: "white" }} />
+            <div>
+              <p style={{ fontSize: "0.5em" }}>Resume</p>
+            </div>
+          </Action>
+        </Fab>
+      )}
       <Container className="navbar py-2 d-none d-sm-block col-sm-1 vh-100 position-fixed">
         <Row className="align-items-center h-100">
           <Col>
