@@ -1,9 +1,7 @@
-import React from "react";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import { Col, Row, Container } from "react-bootstrap";
+import "react-vertical-timeline-component/style.min.css";
 import Thumbnail from "components/Thumbnail/Thumbnail";
-import { Col, Container, Row } from "react-bootstrap";
-import "./Projects.css";
 
 const content = [
   {
@@ -48,53 +46,50 @@ const content = [
       "Gained >$5000 in sponsorships without prior recognition",
     ],
   },
+  {
+    link: "https://github.com/alvynben/ninja-way",
+    image:
+      "https://www.ninjavan.co/cover.png",
+    title: "Ninja Way",
+    category: "Dart | Flutter",
+    description: [
+      "Created mobile app using Flutter (Dart) during 12-hour hackathon",
+      "Implemented cloud architecture using Google Cloud Functions, Firestore, and API gateway",
+    ],
+  },
+  {
+    link: "https://ay2122s1-cs2113t-w12-4.github.io/tp/",
+    image:
+      "https://ay2122s1-cs2113t-w12-4.github.io/tp/umlDiagrams/Ui.png",
+    title: "Fridget",
+    category: "Java | Gradle | GitHub Actions",
+    description: [
+      "Developed a CLI app with Java, with user/developer guide in less than 5 weeks",
+      "Used Gradle as a build tool, with Github Workflows for continuous integration",
+    ],
+  },
 ];
 
 export default function Projects() {
+  const [width, setWidth] = useState(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
   return (
-    <Container
-      className="my-2 projects-container"
-      id="projects-container"
-      fluid
-    >
-      <Row className="h-100">
-        <Col sm={3} className="align-self-center">
-          <h1 id="projectsTitle">Projects</h1>
-          <p>
-            <em> A few of the fun projects I've worked on. </em>
-          </p>
-          <p>
-            <small>
-              {" "}
-              Unless otherwise stated, I'm either the sole developer or sole
-              frontend developer.{" "}
-            </small>
-          </p>
-
-          <p>
-            <small> See more at my: </small>
-          </p>
-          <a
-            href="https://www.linkedin.com/in/alvinbenabraham"
-            target="_blank"
-            rel="noreferrer"
-            className="mx-2"
-          >
-            <FontAwesomeIcon icon={faLinkedin} size="3x" color="#3366ff" />
-          </a>
-
-          <a
-            href="https://www.github.com/alvynben"
-            target="_blank"
-            rel="noreferrer"
-            className="mx-2"
-          >
-            <FontAwesomeIcon icon={faGithub} size="3x" color="#ffffff" />
-          </a>
-        </Col>
-
-        <Col sm={9} className="align-self-center">
-          <small style={{color: "#fff"}}> [Scroll over them to learn more!]</small>
+    <Col className="mt-4 mb-4" sm={12}>
+      <h1 className="mt-4">Projects</h1>
+      <p style={{color: "#f00"}}><small>When I'm not cycling or cooking, this is how I spend my time.</small></p>
+      <Row>
+      <Col sm={12} className="align-self-center">
+          <small style={{color: "#fff"}}> {`[${isMobile ? 'Click on' :'Scroll over'} them to learn more!]`}</small>
 
           <Container className="projects" fluid>
             <Row className="g-0 justify-content-around align-items-center">
@@ -113,6 +108,6 @@ export default function Projects() {
           </Container>
         </Col>
       </Row>
-    </Container>
+    </Col>
   );
 }

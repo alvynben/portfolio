@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-import { useRef } from "react";
 import * as THREE from "three/src/Three.js";
 import "./Playground.css";
 
 function Playground() {
-  const canvasRef = useRef(null);
 
   useEffect(() => {
     THREE.Cache.enabled = true;
@@ -33,22 +31,23 @@ function Playground() {
     camera.position.set(300, 200, -100);
     camera.lookAt(0, 10, 0);
 
-    function resizeCanvasToDisplaySize() {
-      const canvas = renderer.domElement;
-      // look up the size the canvas is being displayed
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
+    // TODO: Implement 
+    // function resizeCanvasToDisplaySize() {
+    //   const canvas = renderer.domElement;
+    //   // look up the size the canvas is being displayed
+    //   const width = canvas.clientWidth;
+    //   const height = canvas.clientHeight;
 
-      // adjust displayBuffer size to match
-      if (canvas.width !== width || canvas.height !== height) {
-        // you must pass false here or three.js sadly fights the browser
-        renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
+    //   // adjust displayBuffer size to match
+    //   if (canvas.width !== width || canvas.height !== height) {
+    //     // you must pass false here or three.js sadly fights the browser
+    //     renderer.setSize(width, height, false);
+    //     camera.aspect = width / height;
+    //     camera.updateProjectionMatrix();
 
-        // update any render target sizes here
-      }
-    }
+    //     // update any render target sizes here
+    //   }
+    // }
 
     // renderMap(cameraWidth, cameraHeight * 2);
 
@@ -225,7 +224,7 @@ function Playground() {
     interseed.rotation.x = -Math.PI / 2;
     interseed.position.y = 1;
     interseed.position.z = 2200;
-    scene.add(interseed);
+    // scene.add(interseed);
 
     // let divString =
     //   "<div>" +
@@ -273,46 +272,47 @@ function Playground() {
     renderer.setAnimationLoop(animation);
 
     window.addEventListener("keydown", function (event) {
-      if (event.key == "ArrowUp") {
+      if (event.key === "ArrowUp") {
         accelerate = true;
         return;
       }
-      if (event.key == "ArrowDown") {
+      if (event.key === "ArrowDown") {
         reverse = true;
         event.preventDefault();
         return;
       }
-      if (event.key == "ArrowLeft") {
+      if (event.key === "ArrowLeft") {
         left = true;
         return;
       }
-      if (event.key == "ArrowRight") {
+      if (event.key === "ArrowRight") {
         right = true;
         return;
       }
     });
 
     window.addEventListener("keyup", function (event) {
-      if (event.key == "ArrowUp") {
+      if (event.key === "ArrowUp") {
         accelerate = false;
         return;
       }
-      if (event.key == "ArrowDown") {
+      if (event.key === "ArrowDown") {
         reverse = false;
         return;
       }
-      if (event.key == "ArrowLeft") {
+      if (event.key === "ArrowLeft") {
         left = false;
         return;
       }
-      if (event.key == "ArrowRight") {
+      if (event.key === "ArrowRight") {
         right = false;
         return;
       }
     });
 
     const acceleration = 0.0017;
-    const friction = acceleration / 2;
+    // TODO: Implement friction
+    // const friction = acceleration / 2;
     let speed = 0;
     let maxSpeed = 0.5;
     let displacement;

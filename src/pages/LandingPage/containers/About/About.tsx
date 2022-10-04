@@ -1,13 +1,14 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import alvin01 from "assets/alvin01.jpg"
 import './About.css'
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export default function About() {
+export default function About(): JSX.Element {
   return (
     <Container className="py-4 about-container" id="about-container" fluid>
       <Row className="h-100">
@@ -27,7 +28,7 @@ export default function About() {
           </blockquote>
         </Col>
         <Col sm={12}>
-          <Row className="align-items-center">
+          <Row className="align-items-center justify-content-center">
             <Col sm={6} className="blaster-container align-self-center">
               <div className="blaster1" />
               <div className="blaster2" />
@@ -56,7 +57,7 @@ export default function About() {
                 - give me a call.
               </p>
               <a href="https://t.me/alvynbeno" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon icon={faTelegram} color="#3366ff" size="3x" />
+                <FontAwesomeIcon icon={faTelegram as IconProp} color="#3366ff" size="3x" />
               </a>
             </Col>
           </Row>

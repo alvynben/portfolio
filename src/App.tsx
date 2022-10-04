@@ -3,13 +3,14 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
-import Navbar from "./components/Navbar/Navbar";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Playground from "./pages/Playground/Playground";
+import Navbar from "components/Navbar/Navbar";
+import LandingPage from "pages/LandingPage/LandingPage";
+import Playground from "pages/Playground/Playground";
+import Resume from "pages/Resume/Resume";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [proceedAnyway, setProceedAnyway] = useState(false);
+  const [proceedAnyway, setProceedAnyway] = useState(true);
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -58,8 +59,9 @@ function App() {
             </Col>
             <Col sm={8} className="mx-auto">
               <Routes>
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<Resume />} />
                 <Route path="/play" element={<Playground />} />
+                <Route path="/about" element={<LandingPage />} />
               </Routes>
             </Col>
           </Row>
