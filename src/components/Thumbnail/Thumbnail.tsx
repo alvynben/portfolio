@@ -42,7 +42,7 @@ export default function Thumbnail(props: ThumbnailProps) {
   return (
     <animated.div
       {...bind()}
-      style={{ x, y, width: "35vh", height: "40vh" }}
+      style={{ x, y, width: "35vh", height: "50vh" }}
       className="thumbnail mb-4 ml-1 mr-1 my-2"
       onMouseEnter={() => {if(!isMobile) set((state) => !state)}}
       onMouseLeave={() => {if(!isMobile) set((state) => !state)}}
