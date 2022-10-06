@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Thumbnail.css";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
+import useWindowWidth from "hooks/useWindowWidth";
 
 export interface ThumbnailProps {
   image: any;
@@ -12,7 +13,6 @@ export interface ThumbnailProps {
 }
 
 export default function Thumbnail(props: ThumbnailProps) {
-  const [width, setWidth] = useState(window.innerWidth);
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
   // Set the drag hook and define component movement based on gesture data
@@ -26,17 +26,8 @@ export default function Thumbnail(props: ThumbnailProps) {
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 700, friction: 80 },
   });
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 768;
 
   // Bind it to a component
   return (

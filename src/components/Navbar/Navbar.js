@@ -7,6 +7,7 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useWindowWidth from "hooks/useWindowWidth";
 import { React, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -16,19 +17,8 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const [viewLocation, setViewLocation] = useState("about-container");
-  const [width, setWidth] = useState(window.innerWidth);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 768;
 
   const moveToId = (id) => {
     const container = document.getElementById(id);
@@ -99,68 +89,63 @@ export default function Navbar() {
       <Container className="navbar py-2 d-none d-sm-block col-sm-1 vh-100 position-fixed">
         <Row className="align-items-center h-100">
           <Col>
-            <Col sm={12}>
+            <Col
+              className={`navItemText`}
+              onClick={() => {
+                navigateTo("/about");
+                setViewLocation("about-container");
+              }}
+              sm={12}
+            >
               <FontAwesomeIcon
                 icon={faAddressCard}
                 style={{ color: "white" }}
               />
-              <p
-                className={`navItemText`}
-                onClick={() => {
-                  navigateTo("/about");
-                  setViewLocation("about-container");
-                }}
-              >
-                About
-              </p>
+              <p>About</p>
             </Col>
-            <Col sm={12}>
+            <Col
+              className="navItemText"
+              onClick={() => {
+                navigateTo("/about");
+                setViewLocation("projects-container");
+              }}
+              sm={12}
+            >
               <FontAwesomeIcon icon={faFolder} style={{ color: "white" }} />{" "}
-              <p
-                className="navItemText"
-                onClick={() => {
-                  navigateTo("/about");
-                  setViewLocation("projects-container");
-                }}
-              >
-                Projects
-              </p>
+              <p>Projects</p>
             </Col>
-            <Col sm={12}>
+            <Col
+              className="navItemText"
+              onClick={() => {
+                navigateTo("/about");
+                setViewLocation("articles-container");
+              }}
+              sm={12}
+            >
               <FontAwesomeIcon icon={faNewspaper} style={{ color: "white" }} />{" "}
-              <p
-                className="navItemText"
-                onClick={() => {
-                  navigateTo("/about");
-                  setViewLocation("articles-container");
-                }}
-              >
-                Presence
-              </p>
+              <p>Presence</p>
             </Col>
-            <Col sm={12}>
+            <Col
+              className="navItemText"
+              onClick={() => {
+                navigateTo("/");
+                setViewLocation("resume-container");
+              }}
+              sm={12}
+            >
               <FontAwesomeIcon icon={faFilePdf} style={{ color: "white" }} />{" "}
-              <p
-                className="navItemText"
-                onClick={() => {
-                  navigateTo("/");
-                  setViewLocation("resume-container");
-                }}
-              >
-                Resume
-              </p>
+              <p>Resume</p>
             </Col>
-            <Col sm={12}>
+            <Col
+              className="navItemText"
+              onClick={() => {
+                navigateTo("play");
+                setViewLocation("play");
+              }}
+              sm={12}
+            >
               <FontAwesomeIcon icon={faGamepad} style={{ color: "white" }} />{" "}
-              <p
-                className="navItemText"
-                onClick={() => {
-                  navigateTo("play");
-                  setViewLocation("play");
-                }}
-              >
-                Playground (WIP!)
-              </p>
+              <p>Playground (WIP!)</p>
             </Col>
           </Col>
         </Row>

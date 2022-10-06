@@ -20,12 +20,16 @@
     transition: color 50ms;
   }
   
-  .navItemText:hover {
+  .navItemText:hover * {
     /* color: #d61a1f; */
     color: #3366ff;
   }
   
-  .navItemText {
+  .navItemText{
+    cursor: pointer;
+  }
+
+  .navItemText * {
     font-size: 1vw;
     color: #fff;
     cursor: pointer;

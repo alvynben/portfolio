@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import "react-vertical-timeline-component/style.min.css";
 import Thumbnail from "components/Thumbnail/Thumbnail";
+import useWindowWidth from "hooks/useWindowWidth";
 
 const content = [
   {
@@ -71,18 +72,9 @@ const content = [
 ];
 
 export default function Projects() {
-  const [width, setWidth] = useState(window.innerWidth);
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 768;
+  
   return (
     <Col className="mt-4 mb-4" sm={12}>
       <h1 className="mt-4">Projects</h1>

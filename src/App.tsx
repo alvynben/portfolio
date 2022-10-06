@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,22 +7,13 @@ import Navbar from "components/Navbar/Navbar";
 import LandingPage from "pages/LandingPage/LandingPage";
 import Playground from "pages/Playground/Playground";
 import Resume from "pages/Resume/Resume";
+import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
+import useWindowWidth from "hooks/useWindowWidth";
 
 function App() {
-  const [width, setWidth] = useState(window.innerWidth);
   const [proceedAnyway, setProceedAnyway] = useState(true);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 768;
 
   return (
     <BrowserRouter>
@@ -58,6 +49,7 @@ function App() {
               <Navbar />
             </Col>
             <Col sm={8} className="mx-auto">
+              {!isMobile ? <SocialMediaBar /> : null}
               <Routes>
                 <Route path="/" element={<Resume />} />
                 <Route path="/play" element={<Playground />} />
