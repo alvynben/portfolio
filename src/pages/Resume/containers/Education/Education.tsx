@@ -29,7 +29,7 @@ function Number() {
           <animated.p style={{ display: "inline-block" }}>
             {number.to((n) => n.toFixed(0))}
           </animated.p>{" "}
-          Months
+          Months (May 2024)
         </>
       )}
     </p>
