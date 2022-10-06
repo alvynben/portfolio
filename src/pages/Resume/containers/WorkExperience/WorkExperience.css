@@ -4,6 +4,11 @@
 
 .work-experience li {
     font-size: small;
+    margin-bottom: 1em;
+}
+
+.accordion-body {
+    text-align: justify;
 }
 
 .work-experience button {

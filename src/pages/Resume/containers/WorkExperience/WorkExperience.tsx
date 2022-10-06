@@ -3,7 +3,11 @@ import { useInViewport } from "react-in-viewport";
 import { Col, Accordion } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { faGraduationCap, faIdBadge, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGraduationCap,
+  faIdBadge,
+  faLeaf,
+} from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   VerticalTimeline,
@@ -33,20 +37,30 @@ export default function WorkExperience() {
       [interseedInViewport, interseedRef],
       [teachingInViewport, teachingRef],
       [robomInViewport, robomRef],
-      [armyInViewport, armyRef]
+      [armyInViewport, armyRef],
     ];
     const activeKeys: RefObject<HTMLDivElement>[] = [];
     for (const viewCheck of allKeys) {
-      if (viewCheck[0]) activeKeys.push(viewCheck[1] as RefObject<HTMLDivElement>);
+      if (viewCheck[0])
+        activeKeys.push(viewCheck[1] as RefObject<HTMLDivElement>);
     }
-    var middle: RefObject<HTMLDivElement> = activeKeys[Math.floor(activeKeys.length / 2)];
+    var middle: RefObject<HTMLDivElement> =
+      activeKeys[Math.floor(activeKeys.length / 2)];
     setActiveKey(middle);
-  }, [tikTokInViewport, interseedInViewport, teachingInViewport, robomInViewport, armyInViewport]);
+  }, [
+    tikTokInViewport,
+    interseedInViewport,
+    teachingInViewport,
+    robomInViewport,
+    armyInViewport,
+  ]);
 
   return (
     <Col className="work-experience" sm={12}>
       <h1 className="mt-4">Work Experience</h1>
-      <p style={{color: "#f00"}}><small>All my second homes.</small></p>
+      <p style={{ color: "#f00" }}>
+        <small>All my second homes.</small>
+      </p>
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -86,13 +100,18 @@ export default function WorkExperience() {
                 <li>
                   Planned and constructed efficient and highly reusable
                   front-end systems driving complex web applications for
-                  e-commerce products, <strong>increasing unique views by 110% and
-                  retention rate by 24%.</strong>
+                  e-commerce products,{" "}
+                  <strong>
+                    increasing unique views by 110% and retention rate by 24%.
+                  </strong>
                 </li>
                 <li>
                   Collaborated with product design, product management and
-                  software engineering teams to deliver more than <strong>3 large-scale
-                  features across more than 5 countries over 3 months.</strong>
+                  software engineering teams to deliver more than{" "}
+                  <strong>
+                    3 large-scale features across more than 5 countries over 3
+                    months.
+                  </strong>
                 </li>
               </Accordion.Body>
             </Accordion.Item>
@@ -127,34 +146,36 @@ export default function WorkExperience() {
             Interseed Co, Singapore
           </h4>
           <p>React | Typescript | NodeJS</p>
-          <Accordion
-            ref={interseedRef}
-            className="mt-4"
-          >
+          <Accordion ref={interseedRef} className="mt-4">
             <Accordion.Item eventKey="1">
               <Accordion.Header>What I did</Accordion.Header>
               <Accordion.Body>
                 <li>
                   Accomplished mobile responsiveness for Interseed's Social
-                  Networking application (app.interseed.co) to increase
-                  percentage of mobile users from 20% to 74% of current user
-                  base.
+                  Networking application (app.interseed.co) to{" "}
+                  <strong>
+                    increase percentage of mobile users from 20% to 74%
+                  </strong>{" "}
+                  of current user base.
                 </li>
                 <li>
-                  Collaborated with development team to design features for
-                  initial launch over 5 weeks, and collected user feedback to
-                  perform bug fixes with React, Typescript, and Bootstrap.
+                  Collaborated with development team to{" "}
+                  <strong>
+                    design features for initial launch over 5 weeks
+                  </strong>
+                  , and collected user feedback to perform bug fixes with React,
+                  Typescript, and Bootstrap.
                 </li>
                 <li>
-                  Created new REST API endpoint in NodeJS server with ExpressJS,
-                  by interfacing with MongoDB database to group more than 200
-                  website users by location for display on a dynamic map,
-                  created using React Leaflet.
+                  <strong>Created new REST API endpoint</strong> in NodeJS
+                  server with ExpressJS, by interfacing with MongoDB database to
+                  group more than 200 website users by location for display on a
+                  dynamic map, created using React Leaflet.
                 </li>
                 <li>
-                  Championed product management methodologies (user personas,
-                  brainstorming) to develop product features to specifically
-                  assist main customer base over 2-week timeline
+                  <strong>Championed product management methodologies</strong>{" "}
+                  (user personas, brainstorming) to develop product features to
+                  specifically assist main customer base over 2-week timeline
                 </li>
               </Accordion.Body>
             </Accordion.Item>
@@ -173,7 +194,12 @@ export default function WorkExperience() {
           }}
           date="Aug 2021 - Dec 2021"
           iconStyle={{ background: "rgb(255, 255, 255)", color: "#000" }}
-          icon={<FontAwesomeIcon style={{ width: "24px" }} icon={faGraduationCap as IconProp} />}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: "24px" }}
+              icon={faGraduationCap as IconProp}
+            />
+          }
         >
           <h4 className="vertical-timeline-element-title">
             Teaching Assistant
@@ -187,12 +213,13 @@ export default function WorkExperience() {
               <Accordion.Header>What I did</Accordion.Header>
               <Accordion.Body>
                 <li>
-                  Taught and graded a batch of 22 students about fundamental
-                  programming concepts leveraging Python and Object-Oriented
-                  Programming.
+                  <strong>Taught</strong> and graded a batch of 22 students
+                  about fundamental programming concepts leveraging{" "}
+                  <strong>Python and Object-Oriented Programming.</strong>
                 </li>
                 <li>
-                  Received 4.3/5 and above on all metrics from student feedback.
+                  <strong>Received 4.3/5</strong> and above on all metrics from
+                  student feedback.
                 </li>
               </Accordion.Body>
             </Accordion.Item>
@@ -211,7 +238,12 @@ export default function WorkExperience() {
           }}
           date="Aug 2020 - Aug 2021"
           iconStyle={{ background: "rgb(255, 255, 255)", color: "#000" }}
-          icon={<FontAwesomeIcon style={{ width: "24px" }} icon={faGraduationCap as IconProp} />}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: "24px" }}
+              icon={faGraduationCap as IconProp}
+            />
+          }
         >
           <h4 className="vertical-timeline-element-title">
             Software Vice President
@@ -226,21 +258,27 @@ export default function WorkExperience() {
               <Accordion.Body>
                 <li>
                   Researched different development kits and cameras such as the
-                  NVIDIA NX & Raspberry Pi Cam to design an embedded system for
-                  target detection and aiming.
+                  NVIDIA NX & Raspberry Pi Cam to{" "}
+                  <strong>
+                    design an embedded system for target detection and aiming.
+                  </strong>
                 </li>
                 <li>
-                  Spearheaded computer vision team to implement Yolov5 on
-                  PyTorch and Yolov4 on TensorRT along with Robotic Operating
-                  System (ROS) 2 to do target detection of a custom dataset.
+                  Spearheaded computer vision team to{" "}
+                  <strong>
+                    implement Yolov5 on PyTorch and Yolov4 on TensorRT along
+                    with Robotic Operating System (ROS) 2
+                  </strong>{" "}
+                  to do target detection of a custom dataset.
                 </li>
                 <li>
-                  Integrated CSI camera with Jetson Xavier NX with Ubuntu 18.04
-                  to fix pre-existing robot hardware.
+                  <strong>Integrated CSI camera with Jetson Xavier NX</strong>{" "}
+                  with Ubuntu 18.04 to fix pre-existing robot hardware.
                 </li>
                 <li>
-                  Created a custom PyTorch model from self-annotated database to
-                  track and aim at targets with less than 20ms latency.
+                  <strong>Created a custom PyTorch model</strong> from
+                  self-annotated database to track and aim at targets with less
+                  than 20ms latency.
                 </li>
               </Accordion.Body>
             </Accordion.Item>
@@ -273,17 +311,23 @@ export default function WorkExperience() {
               <Accordion.Body>
                 <li>
                   Devised and organized a database system to monitor and update
-                  lesson plans from multiple units, cutting down delivery time
-                  for an updated hardcopy lesson plan from 3 days to less than a
-                  day.
+                  lesson plans from multiple units,{" "}
+                  <strong>cutting down delivery time</strong>
+                  for an updated hardcopy lesson plan{" "}
+                  <strong>from 3 days to less than a day.</strong>
                 </li>
                 <li>
                   Picked to be emcee for unit anniversary event, and
-                  self-developed script to present a show for more than 500 pax.
+                  <strong>
+                    self-developed script to present a show for more than 500
+                    pax.
+                  </strong>
                 </li>
                 <li>
-                  Awarded Best Commander during service from unit commander and
-                  awarded Outstanding conduct upon release from service.
+                  Awarded <strong>Best Commander</strong> during service from
+                  unit commander and awarded{" "}
+                  <strong>Outstanding conduct</strong> upon release from
+                  service.
                 </li>
               </Accordion.Body>
             </Accordion.Item>
