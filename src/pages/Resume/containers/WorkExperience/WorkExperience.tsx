@@ -86,13 +86,13 @@ export default function WorkExperience() {
                 <li>
                   Planned and constructed efficient and highly reusable
                   front-end systems driving complex web applications for
-                  e-commerce products, increasing unique views by 110% and
-                  retention rate by 24%.
+                  e-commerce products, <strong>increasing unique views by 110% and
+                  retention rate by 24%.</strong>
                 </li>
                 <li>
                   Collaborated with product design, product management and
-                  software engineering teams to deliver more than 3 large-scale
-                  features across more than 5 countries over 3 months.
+                  software engineering teams to deliver more than <strong>3 large-scale
+                  features across more than 5 countries over 3 months.</strong>
                 </li>
               </Accordion.Body>
             </Accordion.Item>

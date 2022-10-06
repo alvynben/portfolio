@@ -28,6 +28,7 @@
   .navItemText {
     font-size: 1vw;
     color: #fff;
+    cursor: pointer;
   }
 
 /* Position and sizing of burger button */
