@@ -26,7 +26,7 @@ function Number() {
       ) : (
         <>
           Graduating in{" "}
-          <animated.p style={{ display: "inline-block" }}>
+          <animated.p style={{ display: "inline-block", margin: 0 }}>
             {number.to((n) => n.toFixed(0))}
           </animated.p>{" "}
           Months (May 2024)
