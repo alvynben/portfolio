@@ -34,10 +34,8 @@ const Header = () => (
         <FontAwesomeIcon icon={faGithub as IconProp} /> GitHub
       </Button>
 
-      <Button variant="danger">
-        <a style={{textDecoration: 'none', color: '#fff'}} href={cvPDF} target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faFilePdf as IconProp} /> Resume
-        </a>
+      <Button href={cvPDF} target="_blank" rel="noreferrer" variant="danger">
+        <FontAwesomeIcon icon={faFilePdf as IconProp} /> Resume
       </Button>
     </ButtonGroup>
   </Col>
