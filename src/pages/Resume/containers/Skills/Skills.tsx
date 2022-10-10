@@ -2,13 +2,13 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
-import './Skills.css';
+import "./Skills.css";
 
 const Skill: React.FC<{
-    skillName: string;
-    noOfStars?: number;
-    noOfHalfStars?: number;
-}> = ({skillName, noOfStars = 0, noOfHalfStars = 0}) => (
+  skillName: string;
+  noOfStars?: number;
+  noOfHalfStars?: number;
+}> = ({ skillName, noOfStars = 0, noOfHalfStars = 0 }) => (
   <div className="d-flex justify-content-center">
     <p
       style={{
@@ -19,22 +19,23 @@ const Skill: React.FC<{
       {skillName}
     </p>
     <div style={{ textAlign: "left" }}>
-        {[...Array(noOfStars)].map(num => {
-            return <FontAwesomeIcon color="#ff0" icon={faStar}></FontAwesomeIcon>
-        })}
-        {[...Array(noOfHalfStars)].map(num => {
-            return <FontAwesomeIcon color="#ff0" icon={faStarHalf}></FontAwesomeIcon>
-        })}
+      {[...Array(noOfStars)].map((num, idx) => {
+        return <FontAwesomeIcon key={`full-${idx}`} color="#ff0" icon={faStar} />;
+      })}
+      {[...Array(noOfHalfStars)].map((num, idx) => {
+        return <FontAwesomeIcon key={`half-${idx}`} color="#ff0" icon={faStarHalf} />;
+      })}
     </div>
   </div>
 );
 
 export default function Skills() {
-  
   return (
     <Col className="mt-4 mb-4" sm={12}>
       <h1>Skills</h1>
-      <p style={{color: "#f00"}}><small>A craftsman is only as good as his tools. Here are mine.</small></p>
+      <p style={{ color: "#f00" }}>
+        <small>A craftsman is only as good as his tools. Here are mine.</small>
+      </p>
       <Row>
         <Col className="mt-4" sm={4}>
           <h2 className="mb-4">Front End</h2>

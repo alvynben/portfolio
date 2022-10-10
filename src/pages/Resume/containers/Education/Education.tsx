@@ -20,19 +20,19 @@ function Number() {
   });
 
   return (
-    <p>
+    <div>
       {diffInMonths <= 0 ? (
-        "Graduated!"
+        <p>Graduated!</p>
       ) : (
         <>
-          Graduating in{" "}
+          <p style={{ display: "inline-block", margin: 0 }}>Graduating in</p>{" "}
           <animated.p style={{ display: "inline-block", margin: 0 }}>
             {number.to((n) => n.toFixed(0))}
           </animated.p>{" "}
-          Months (May 2024)
+          <p style={{ display: "inline-block" }}>Months (May 2024)</p>
         </>
       )}
-    </p>
+    </div>
   );
 }
 

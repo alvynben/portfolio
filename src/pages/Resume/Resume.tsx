@@ -9,6 +9,7 @@ import Projects from "./containers/Projects/Projects";
 import Skills from "./containers/Skills/Skills";
 import Education from "./containers/Education/Education";
 import cvPDF from "assets/CV.pdf";
+import CoCurricular from "./containers/CoCurricular/CoCurricular";
 
 const Header = () => (
   <Col
@@ -51,9 +52,7 @@ export default function Resume() {
           <Skills />
           <WorkExperience />
           <Projects />
-          {/* <Col sm={12}>
-            <h1>Co-Curricular Activities</h1>
-          </Col> */}
+          <CoCurricular />
         </Row>
       </Container>
     </>

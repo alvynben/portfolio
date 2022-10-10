@@ -62,7 +62,7 @@ export default function Thumbnail(props: ThumbnailProps) {
         className="thumbnail-description"
       >
         {props.description.map((content) => {
-          return <p>{content}</p>;
+          return <p key={content[0]}>{content}</p>;
         })}
         <p>
           See more <a href={props.link} target="_blank" rel="noreferrer">HERE</a>

@@ -101,6 +101,7 @@ export default function Projects() {
               {content.map((data) => {
                 return (
                   <Thumbnail
+                    key={data.title}
                     link={data.link}
                     image={data.image}
                     title={data.title}
