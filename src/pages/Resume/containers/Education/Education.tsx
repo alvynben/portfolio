@@ -46,7 +46,7 @@ export default function Education() {
 
       <Row className="align-items-center justify-content-center">
         <Col sm={3}>
-          <img style={{ marginTop: "-2rem" }} src={nusImg} alt="NUS Logo" />
+          <img src={nusImg} alt="NUS Logo" />
         </Col>
         <Col sm={6} className="h-100">
           <p>Bachelor of Engineering (Computer Engineering) Honours</p>
