@@ -58,6 +58,8 @@ export default function Skills() {
           <h2 className="mb-4">Others</h2>
           <div>
             <Skill skillName="Git" noOfStars={3} />
+            <Skill skillName="Ubuntu" noOfStars={3} />
+            <Skill skillName="Bash" noOfStars={3} />
             <Skill skillName="Figma" noOfStars={2} />
             <Skill skillName="Canva" noOfStars={2} />
           </div>
