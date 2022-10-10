@@ -9,21 +9,24 @@ const Skill: React.FC<{
   noOfStars?: number;
   noOfHalfStars?: number;
 }> = ({ skillName, noOfStars = 0, noOfHalfStars = 0 }) => (
-  <div className="d-flex justify-content-center">
+  <div className="d-flex justify-content-center mb-3">
     <p
       style={{
         display: "inline-block",
         marginRight: "1em",
+        marginBottom: 0,
+        maxWidth: "9em",
+        width: "9em",
       }}
     >
       {skillName}
     </p>
-    <div style={{ textAlign: "left" }}>
+    <div style={{display: 'flex', alignItems: 'center', width: '5em' }}>
       {[...Array(noOfStars)].map((num, idx) => {
-        return <FontAwesomeIcon key={`full-${idx}`} color="#ff0" icon={faStar} />;
+        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`full-${idx}`} color="#ff0" icon={faStar} />;
       })}
       {[...Array(noOfHalfStars)].map((num, idx) => {
-        return <FontAwesomeIcon key={`half-${idx}`} color="#ff0" icon={faStarHalf} />;
+        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`half-${idx}`} color="#ff0" icon={faStarHalf} />;
       })}
     </div>
   </div>
@@ -36,9 +39,9 @@ export default function Skills() {
       <p style={{ color: "#f00" }}>
         <small>A craftsman is only as good as his tools. Here are mine.</small>
       </p>
-      <Row>
-        <Col className="mt-4" sm={4}>
-          <h2 className="mb-4">Front End</h2>
+      <Row style={{justifyContent: 'center'}}>
+        <Col className="mt-4" sm={12} md={4}>
+          <h2 className="mb-4" style={{whiteSpace: 'nowrap'}}>Front End</h2>
           <div>
             <Skill skillName="React" noOfStars={3} />
             <Skill skillName="TypeScript" noOfStars={3} />
@@ -46,7 +49,7 @@ export default function Skills() {
             <Skill skillName="CSS / SCSS" noOfStars={2} noOfHalfStars={1} />
           </div>
         </Col>
-        <Col className="mt-4" sm={4}>
+        <Col className="mt-4" sm={12} md={4}>
           <h2 className="mb-4">Back End</h2>
           <div>
             <Skill skillName="Python" noOfStars={3} />
@@ -54,7 +57,7 @@ export default function Skills() {
             <Skill skillName="C++" noOfStars={2} />
           </div>
         </Col>
-        <Col className="mt-4" sm={4}>
+        <Col className="mt-4" sm={12} md={4}>
           <h2 className="mb-4">Others</h2>
           <div>
             <Skill skillName="Git" noOfStars={3} />
