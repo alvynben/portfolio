@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import Navbar from "components/Navbar/Navbar";
 import LandingPage from "pages/LandingPage/LandingPage";
@@ -9,7 +9,6 @@ import Playground from "pages/Playground/Playground";
 import Resume from "pages/Resume/Resume";
 import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
 import useWindowWidth from "hooks/useWindowWidth";
-import Utilities from "pages/Utilities/Utilities";
 
 function App() {
   const [proceedAnyway, setProceedAnyway] = useState(true);
@@ -52,10 +51,13 @@ function App() {
             <Col sm={8} className="mx-auto">
               {!isMobile ? <SocialMediaBar /> : null}
               <Routes>
+                
                 <Route path="/" element={<Resume />} />
                 <Route path="/play" element={<Playground />} />
                 <Route path="/about" element={<LandingPage />} />
-                <Route path="/utilities" element={<Utilities />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+                
+                
               </Routes>
             </Col>
           </Row>

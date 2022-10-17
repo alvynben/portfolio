@@ -47,7 +47,7 @@ function TimezoneConverter() {
         return;
       }
       fetch(
-        "http://api.timezonedb.com/v2.1/convert-time-zone?" +
+        "https://api.timezonedb.com/v2.1/convert-time-zone?" +
           new URLSearchParams({
             key: "DFRMIE2NGTS2",
             format: "json",

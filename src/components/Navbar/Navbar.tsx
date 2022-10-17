@@ -2,6 +2,8 @@ import {
   faAddressCard,
   faFilePdf,
   faGamepad,
+  faFolder,
+  faNewspaper,
   faPlus,
   faToolbox,
   IconDefinition,
@@ -22,6 +24,7 @@ type NavItem = {
   text: string;
   mobileText?: string;
   onlyForDesktop?: boolean;
+  hidden?: boolean;
 };
 
 interface ActionButton {
@@ -31,6 +34,7 @@ interface ActionButton {
   text: string;
   mobileText?: string;
   onlyForDesktop?: boolean;
+  hidden?: boolean;
 }
 
 interface NavButton {
@@ -40,6 +44,7 @@ interface NavButton {
   text: string;
   mobileText?: string;
   onlyForDesktop?: boolean;
+  hidden?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -48,6 +53,18 @@ const navItems: NavItem[] = [
     viewLoc: "about-container",
     icon: faAddressCard,
     text: "About",
+  },
+  {
+    navLoc: "about",
+    viewLoc: "projects-container",
+    icon: faFolder,
+    text: "Projects",
+  },
+  {
+    navLoc: "about",
+    viewLoc: "articles-container",
+    icon: faNewspaper,
+    text: "Presence",
   },
   {
     navLoc: "/",
@@ -61,6 +78,7 @@ const navItems: NavItem[] = [
     icon: faToolbox,
     text: "Utilities",
     mobileText: "Utils",
+    hidden: true,
   },
   {
     navLoc: "play",
@@ -153,13 +171,13 @@ export default function Navbar() {
           icon={<FontAwesomeIcon icon={faPlus} />}
           event="click"
         >
-          {navItems.map((navItem) => !navItem.onlyForDesktop ? ActionButton(navItem) : null)}
+          {navItems.map((navItem) => (navItem.onlyForDesktop || navItem.hidden) ? null : ActionButton(navItem))}
         </Fab>
       )}
       <Container className="navbar py-2 d-none d-sm-block col-sm-1 vh-100 position-fixed">
         <Row className="align-items-center h-100">
           <Col>
-          {navItems.map(navItem => NavButton(navItem))}     
+          {navItems.map(navItem => navItem.hidden ? null : NavButton(navItem))}     
           </Col>
         </Row>
       </Container>
