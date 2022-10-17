@@ -9,6 +9,7 @@ import Playground from "pages/Playground/Playground";
 import Resume from "pages/Resume/Resume";
 import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
 import useWindowWidth from "hooks/useWindowWidth";
+import Utilities from "pages/Utilities/Utilities";
 
 function App() {
   const [proceedAnyway, setProceedAnyway] = useState(true);
@@ -54,6 +55,7 @@ function App() {
                 <Route path="/" element={<Resume />} />
                 <Route path="/play" element={<Playground />} />
                 <Route path="/about" element={<LandingPage />} />
+                <Route path="/utilities" element={<Utilities />} />
               </Routes>
             </Col>
           </Row>

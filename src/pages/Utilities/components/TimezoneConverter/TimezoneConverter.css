@@ -1,0 +1,27 @@
+label {
+    width: 100%;
+}
+
+label div {
+    justify-content: center;
+}
+
+input {
+    font-size: inherit;
+}
+
+.confirm-btn {
+    font-size: inherit;
+    
+}
+
+@media (max-width: 768px) {
+    input {
+        font-size: x-small;
+    }
+
+    .confirm-btn {
+        font-size: x-small;
+    }
+}
+
