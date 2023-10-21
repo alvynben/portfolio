@@ -4,6 +4,7 @@ import { Col, Accordion } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import {
+  faCreditCard,
   faGraduationCap,
   faIdBadge,
   faLeaf,
@@ -20,11 +21,13 @@ export default function WorkExperience() {
   const [activeKey, setActiveKey] = useState<RefObject<HTMLDivElement> | null>(
     null
   );
+  const unit21Ref = useRef<HTMLDivElement>(null);
   const tikTokRef = useRef<HTMLDivElement>(null);
   const interseedRef = useRef<HTMLDivElement>(null);
   const teachingRef = useRef<HTMLDivElement>(null);
   const robomRef = useRef<HTMLDivElement>(null);
   const armyRef = useRef<HTMLDivElement>(null);
+  const { inViewport: unit21InViewport } = useInViewport(unit21Ref);
   const { inViewport: tikTokInViewport } = useInViewport(tikTokRef);
   const { inViewport: interseedInViewport } = useInViewport(interseedRef);
   const { inViewport: teachingInViewport } = useInViewport(teachingRef);
@@ -33,6 +36,7 @@ export default function WorkExperience() {
 
   useEffect(() => {
     const allKeys = [
+      [unit21InViewport, unit21Ref],
       [tikTokInViewport, tikTokRef],
       [interseedInViewport, interseedRef],
       [teachingInViewport, teachingRef],
@@ -48,6 +52,7 @@ export default function WorkExperience() {
       activeKeys[Math.floor(activeKeys.length / 2)];
     setActiveKey(middle);
   }, [
+    unit21InViewport,
     tikTokInViewport,
     interseedInViewport,
     teachingInViewport,
@@ -73,7 +78,59 @@ export default function WorkExperience() {
           contentArrowStyle={{
             borderRight: "7px solid  #3366ff",
           }}
-          date="May 2022 - Sep 2022"
+          date="Jan 2023 - Present"
+          iconStyle={{
+            background: "rgb(255, 255, 255)",
+            color: "#000",
+            textAlign: "center",
+          }}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: "24px" }}
+              icon={faCreditCard as IconProp}
+            />
+          }
+        >
+          <h4 className="vertical-timeline-element-title">
+            Software Engineer Intern
+          </h4>
+          <h4 className="vertical-timeline-element-subtitle">
+            Unit21, San Francisco
+          </h4>
+          <p>React | Typescript | Python</p>
+          <Accordion ref={unit21Ref} className="mt-4">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>What I did</Accordion.Header>
+              <Accordion.Body>
+                <li>
+                Built SOC2 compliant frontend and backend features for financial compliance management tools processing upwards of 
+                  <strong>
+                  &gt;1B transactions per call.{" "}
+                  </strong>
+                </li>
+                <li>
+                Started working on{" "}
+                  <strong>
+                    integrating OpenAI LLM functionality securely{" "}
+                  </strong> 
+                to enable customers to identify patterns and make Matplotlib graphs out of data shared with Unit21.{" "}
+                </li>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{
+            background: "rgb(0, 0, 0)",
+            color: "#fff",
+            boxShadow: `0 3px 0 ${tikTokRef === activeKey ? "#36f" : "#fff"}`,
+            transition: "box-shadow 1s",
+          }}
+          contentArrowStyle={{
+            borderRight: "7px solid  #3366ff",
+          }}
+          date="May 2022 - Nov 2022"
           iconStyle={{
             background: "rgb(255, 255, 255)",
             color: "#000",
