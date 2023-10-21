@@ -17,16 +17,6 @@ const content = [
     ],
   },
   {
-    link: "https://voca.sg",
-    image: "https://voca.sg/static/media/WebLandingPage.7b519502.png",
-    title: "Voca SG",
-    category: "ReactJS | Material",
-    description: [
-      "Worked on ReactJS frontend and Python/NodeJS backend",
-      "Currently working on improving backend scraper!",
-    ],
-  },
-  {
     link: "https://app.interseed.co",
     image: "https://app.interseed.co/static/media/mockupresources.450791c2.png",
     title: "Interseed Co.",
