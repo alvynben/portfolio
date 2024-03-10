@@ -2,6 +2,10 @@
 import useWindowWidth from "hooks/useWindowWidth";
 import { useState } from "react";
 
+// CSS
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // External Components
 import { Col, Container, Row } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -13,10 +17,6 @@ import Playground from "pages/Playground/Playground";
 import Resume from "pages/Resume/Resume";
 import Blog from "pages/Blog/Blog";
 import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
-
-// CSS
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [proceedAnyway, setProceedAnyway] = useState(true);
