@@ -7,8 +7,7 @@
 }
 
 h1 {
-  /* color: #d61a1f; */
-  color: #3366ff;
+  --bs-heading-color: #3366ff;
 }
 
 p {

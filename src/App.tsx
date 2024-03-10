@@ -1,14 +1,22 @@
+// Hooks
+import useWindowWidth from "hooks/useWindowWidth";
 import { useState } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// External Components
 import { Col, Container, Row } from "react-bootstrap";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// Internal Components
 import Navbar from "components/Navbar/Navbar";
 import LandingPage from "pages/LandingPage/LandingPage";
 import Playground from "pages/Playground/Playground";
 import Resume from "pages/Resume/Resume";
+import Blog from "pages/Blog/Blog";
 import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
-import useWindowWidth from "hooks/useWindowWidth";
+
+// CSS
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [proceedAnyway, setProceedAnyway] = useState(true);
@@ -55,6 +63,8 @@ function App() {
                 <Route path="/" element={<Resume />} />
                 <Route path="/play" element={<Playground />} />
                 <Route path="/about" element={<LandingPage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:postId" element={<Blog />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
                 
                 

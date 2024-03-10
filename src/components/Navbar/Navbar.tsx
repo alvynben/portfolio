@@ -6,6 +6,7 @@ import {
   faNewspaper,
   faPlus,
   faToolbox,
+  faBlog,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -87,6 +88,12 @@ const navItems: NavItem[] = [
     text: "Playground (WIP)",
     onlyForDesktop: true,
   },
+  {
+    navLoc: "blog",
+    viewLoc: "blog",
+    icon: faBlog,
+    text: "Blog",
+  }
 ];
 
 export default function Navbar() {
@@ -103,6 +110,8 @@ export default function Navbar() {
   useEffect(() => {
     switch (viewLocation) {
       case "play":
+        break;
+      case "blog":
         break;
       case "about-container":
         moveToId(viewLocation);
