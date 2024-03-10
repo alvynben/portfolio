@@ -55,18 +55,18 @@ const navItems: NavItem[] = [
     icon: faAddressCard,
     text: "About",
   },
-  {
-    navLoc: "about",
-    viewLoc: "projects-container",
-    icon: faFolder,
-    text: "Projects",
-  },
-  {
-    navLoc: "about",
-    viewLoc: "articles-container",
-    icon: faNewspaper,
-    text: "Presence",
-  },
+  // {
+  //   navLoc: "about",
+  //   viewLoc: "projects-container",
+  //   icon: faFolder,
+  //   text: "Projects",
+  // },
+  // {
+  //   navLoc: "about",
+  //   viewLoc: "articles-container",
+  //   icon: faNewspaper,
+  //   text: "Presence",
+  // },
   {
     navLoc: "/",
     viewLoc: "resume-container",
