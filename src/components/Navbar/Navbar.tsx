@@ -2,8 +2,6 @@ import {
   faAddressCard,
   faFilePdf,
   faGamepad,
-  faFolder,
-  faNewspaper,
   faPlus,
   faToolbox,
   faBlog,
@@ -55,18 +53,6 @@ const navItems: NavItem[] = [
     icon: faAddressCard,
     text: "About",
   },
-  // {
-  //   navLoc: "about",
-  //   viewLoc: "projects-container",
-  //   icon: faFolder,
-  //   text: "Projects",
-  // },
-  // {
-  //   navLoc: "about",
-  //   viewLoc: "articles-container",
-  //   icon: faNewspaper,
-  //   text: "Presence",
-  // },
   {
     navLoc: "/",
     viewLoc: "resume-container",
@@ -114,12 +100,6 @@ export default function Navbar() {
       case "blog":
         break;
       case "about-container":
-        moveToId(viewLocation);
-        break;
-      case "projects-container":
-        moveToId(viewLocation);
-        break;
-      case "articles-container":
         moveToId(viewLocation);
         break;
       case "resume-container":
