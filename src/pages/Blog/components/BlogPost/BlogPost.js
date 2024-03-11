@@ -14,18 +14,18 @@ import { getPost } from "api/posts";
 // CSS
 import "./BlogPost.css";
 
-function BlogPost({ postId }) {
+function BlogPost({ postSlug }) {
     const navigateTo = useNavigate();
     const [post, setPost] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (postId) {
-            getPost(postId, { setIsLoading }).then((post) => {
+        if (postSlug) {
+            getPost(postSlug, { setIsLoading }).then((post) => {
                 setPost(post);
             });
         }
-    }, [postId]);
+    }, [postSlug]);
 
     return (
         <>

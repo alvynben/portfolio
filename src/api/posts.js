@@ -24,15 +24,15 @@ export const getPosts = async ({ setIsLoading }) => {
 
 /**
  * Fetches a post from the server.
- * @param {string} id - The ID of the post to fetch.
+ * @param {string} slug - The slug of the post to fetch.
  * @param {Object} options - Additional options.
  * @param {Function} options.setIsLoading - A function to set the loading state.
  * @returns {Promise<Object>} - A promise that resolves to the fetched post data.
  */
-export const getPost = async (id, {setIsLoading}) => {
+export const getPost = async (slug, {setIsLoading}) => {
     try {
         setIsLoading && setIsLoading(true);
-        const response = await axios.get(`${BASE_URL}/${id}`);
+        const response = await axios.get(`${BASE_URL}/slug/${slug}`);
         setIsLoading && setIsLoading(false);
         return response.data;
     } catch (error) {

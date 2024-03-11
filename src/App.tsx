@@ -64,7 +64,7 @@ function App() {
                 <Route path="/play" element={<Playground />} />
                 <Route path="/about" element={<LandingPage />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:postId" element={<Blog />} />
+                <Route path="/blog/:postSlug" element={<Blog />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
                 
                 
