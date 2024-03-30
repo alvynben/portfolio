@@ -1,7 +1,12 @@
 import axios from "axios";
+import { Post } from "./types";
 
 const BASE_URL = "https://alvinbenapi.xyz/posts";
+// const BASE_URL = "http://localhost:3001/posts";
 
+interface getPostsOptions {
+    setIsLoading: (isLoading: boolean) => void;
+}
 /**
  * Fetches posts from the server.
  *
@@ -10,7 +15,7 @@ const BASE_URL = "https://alvinbenapi.xyz/posts";
  * @returns {Promise<Array>} - A promise that resolves to an array of posts.
  * @throws {Error} - If there is an error fetching the posts.
  */
-export const getPosts = async ({ setIsLoading }) => {
+export const getPosts = async ({ setIsLoading }: getPostsOptions): Promise<Post[]> => {
     try {
         setIsLoading && setIsLoading(true);
         const response = await axios.get(BASE_URL);
@@ -18,10 +23,15 @@ export const getPosts = async ({ setIsLoading }) => {
         return response.data;
     } catch (error) {
         console.error("Error fetching posts:", error);
+        setIsLoading && setIsLoading(false);
+        return Promise.reject(error);
     }
 };
 
 
+interface getPostOptions {
+    setIsLoading: (isLoading: boolean) => void;
+}
 /**
  * Fetches a post from the server.
  * @param {string} slug - The slug of the post to fetch.
@@ -29,7 +39,7 @@ export const getPosts = async ({ setIsLoading }) => {
  * @param {Function} options.setIsLoading - A function to set the loading state.
  * @returns {Promise<Object>} - A promise that resolves to the fetched post data.
  */
-export const getPost = async (slug, {setIsLoading}) => {
+export const getPost = async (slug: string, {setIsLoading}: getPostOptions): Promise<Post> => {
     try {
         setIsLoading && setIsLoading(true);
         const response = await axios.get(`${BASE_URL}/slug/${slug}`);
@@ -37,5 +47,7 @@ export const getPost = async (slug, {setIsLoading}) => {
         return response.data;
     } catch (error) {
         console.error("Error fetching post:", error);
+        setIsLoading && setIsLoading(false);
+        return Promise.reject(error)
     }
 };

@@ -1,6 +1,6 @@
 // Hooks
 import { useNavigate } from "react-router";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // External Components
 import Markdown from "react-markdown";
@@ -9,14 +9,20 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Spinner } from "react-bootstrap";
 
 // API
-import { getPost } from "api/posts";
+import { getPost } from "api/posts/posts";
 
 // CSS
 import "./BlogPost.css";
+import remarkGfm from "remark-gfm";
+import { Post } from "api/posts/types";
 
-function BlogPost({ postSlug }) {
+interface BlogPostProps {
+    postSlug: string;
+}
+
+const BlogPost: React.FC<BlogPostProps> = ({ postSlug }) => {
     const navigateTo = useNavigate();
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState<Post>();
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -32,11 +38,13 @@ function BlogPost({ postSlug }) {
             {isLoading ? <Spinner animation="border" variant="primary" /> : (
                 <div className="blog-post">
                     <FontAwesomeIcon className="blog-post-back-btn" icon={faChevronLeft} onClick={() => navigateTo("/blog")} color="#fff" />
-                    <div key={post._id}>
-                        <h2>{post.title}</h2>
-                        <p>{new Date(post.date_created).toLocaleDateString()}</p>
-                        <Markdown>{post.content}</Markdown>
-                    </div>
+                    {post && (
+                        <div key={post._id}>
+                            <h2>{post.title}</h2>
+                            <p>{new Date(post.date_created).toLocaleDateString()}</p>
+                            <Markdown remarkPlugins={[[remarkGfm, {singleTilde: false}]]} >{post.content}</Markdown>
+                        </div>
+                    )}
                 </div>
             )}
 

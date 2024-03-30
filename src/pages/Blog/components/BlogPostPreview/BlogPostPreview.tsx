@@ -6,8 +6,19 @@ import Markdown from "react-markdown";
 
 // CSS
 import "./BlogPostPreview.css";
+import React from "react";
 
-function BlogPostPreview({ post }) {
+interface BlogPostPreviewProps {
+    post: {
+        _id: string;
+        title: string;
+        date_created: string;
+        slug: string;
+        content: string;
+    };
+}
+
+const BlogPostPreview: React.FC<BlogPostPreviewProps> = ({ post }) => {
     const navigateTo = useNavigate();
     
     return (

@@ -10,14 +10,15 @@ import { Spinner } from "react-bootstrap";
 import BlogPostPreview from "../BlogPostPreview/BlogPostPreview";
 
 // API
-import { getPosts } from "api/posts";
+import { getPosts } from "api/posts/posts";
 
 // CSS
 import "./ListOfPosts.css";
+import { Post } from "api/posts/types";
 
-export default function ListOfPosts() {
+const ListOfPosts: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<Post[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const goToPreviousPage = () => {
@@ -55,7 +56,7 @@ export default function ListOfPosts() {
                     icon={faCaretRight}
                     onClick={goToNextPage}
                     color="#fff"
-                    size="2x" n
+                    size="2x"
                 />
             </>
             {isLoading ? (
@@ -71,3 +72,5 @@ export default function ListOfPosts() {
         </>
     )
 }
+
+export default ListOfPosts;
