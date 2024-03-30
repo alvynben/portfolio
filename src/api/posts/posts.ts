@@ -2,7 +2,6 @@ import axios from "axios";
 import { Post } from "./types";
 
 const BASE_URL = "https://alvinbenapi.xyz/posts";
-// const BASE_URL = "http://localhost:3001/posts";
 
 interface getPostsOptions {
     setIsLoading: (isLoading: boolean) => void;
