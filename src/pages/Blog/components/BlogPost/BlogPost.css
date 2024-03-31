@@ -7,3 +7,18 @@
 .blog-post-back-btn {
     margin-bottom: 2em;
 }
+
+h2 {
+    color: #ff0;
+}
+
+h3 {
+    color: #fff;
+}
+
+table {
+    color: #fff;
+    margin-bottom: 1em;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
