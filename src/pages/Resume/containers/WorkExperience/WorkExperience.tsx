@@ -67,6 +67,58 @@ export default function WorkExperience() {
         <small>All my second homes.</small>
       </p>
       <VerticalTimeline>
+      <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{
+            background: "rgb(0, 0, 0)",
+            color: "#fff",
+            boxShadow: `0 3px 0 ${tikTokRef === activeKey ? "#36f" : "#fff"}`,
+            transition: "box-shadow 1s",
+          }}
+          contentArrowStyle={{
+            borderRight: "7px solid  #3366ff",
+          }}
+          date="Jun 2024 - Present"
+          iconStyle={{
+            background: "rgb(255, 255, 255)",
+            color: "#000",
+            textAlign: "center",
+          }}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: "24px" }}
+              icon={faTiktok as IconProp}
+            />
+          }
+        >
+          <h4 className="vertical-timeline-element-title">
+            Software Engineer
+          </h4>
+          <h4 className="vertical-timeline-element-subtitle">
+            TikTok, Singapore
+          </h4>
+          <p>React | Typescript | Golang</p>
+          <Accordion ref={unit21Ref} className="mt-4">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>What I'm doing</Accordion.Header>
+              <Accordion.Body>
+                <li>
+                Building features for TikTok Shop Homepage to improve GMV 
+                  <strong>
+                  {" "}at rates of 5 - 10% per feature.{" "}
+                  </strong>
+                </li>
+                <li>
+                Maintaining Backend For Frontend (BFF) Framework{" "}
+                  <strong>
+                    to reduce FE work required for code changes.{" "}
+                  </strong> 
+                {" "}
+                </li>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{
@@ -78,7 +130,7 @@ export default function WorkExperience() {
           contentArrowStyle={{
             borderRight: "7px solid  #3366ff",
           }}
-          date="Jan 2023 - Present"
+          date="Jan 2023 - Dec 2023"
           iconStyle={{
             background: "rgb(255, 255, 255)",
             color: "#000",
@@ -109,9 +161,9 @@ export default function WorkExperience() {
                   </strong>
                 </li>
                 <li>
-                Started working on{" "}
+                Integrated{" "}
                   <strong>
-                    integrating OpenAI LLM functionality securely{" "}
+                    OpenAI LLM functionality securely{" "}
                   </strong> 
                 to enable customers to identify patterns and make Matplotlib graphs out of data shared with Unit21.{" "}
                 </li>
