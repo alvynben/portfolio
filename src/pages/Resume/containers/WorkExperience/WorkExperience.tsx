@@ -21,12 +21,14 @@ export default function WorkExperience() {
   const [activeKey, setActiveKey] = useState<RefObject<HTMLDivElement> | null>(
     null
   );
+  const tikTokFullTimeRef = useRef<HTMLDivElement>(null);
   const unit21Ref = useRef<HTMLDivElement>(null);
   const tikTokRef = useRef<HTMLDivElement>(null);
   const interseedRef = useRef<HTMLDivElement>(null);
   const teachingRef = useRef<HTMLDivElement>(null);
   const robomRef = useRef<HTMLDivElement>(null);
   const armyRef = useRef<HTMLDivElement>(null);
+  const { inViewport: tikTokFullTimeInViewport } = useInViewport(tikTokFullTimeRef);
   const { inViewport: unit21InViewport } = useInViewport(unit21Ref);
   const { inViewport: tikTokInViewport } = useInViewport(tikTokRef);
   const { inViewport: interseedInViewport } = useInViewport(interseedRef);
@@ -36,6 +38,7 @@ export default function WorkExperience() {
 
   useEffect(() => {
     const allKeys = [
+      [tikTokFullTimeInViewport, tikTokFullTimeRef],
       [unit21InViewport, unit21Ref],
       [tikTokInViewport, tikTokRef],
       [interseedInViewport, interseedRef],
@@ -52,6 +55,7 @@ export default function WorkExperience() {
       activeKeys[Math.floor(activeKeys.length / 2)];
     setActiveKey(middle);
   }, [
+    tikTokFullTimeInViewport,
     unit21InViewport,
     tikTokInViewport,
     interseedInViewport,
@@ -98,7 +102,7 @@ export default function WorkExperience() {
             TikTok, Singapore
           </h4>
           <p>React | Typescript | Golang</p>
-          <Accordion ref={unit21Ref} className="mt-4">
+          <Accordion ref={tikTokFullTimeRef} className="mt-4">
             <Accordion.Item eventKey="0">
               <Accordion.Header>What I'm doing</Accordion.Header>
               <Accordion.Body>
