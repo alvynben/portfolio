@@ -3,7 +3,7 @@ import { faCreditCard, faGraduationCap, faIdBadge, faLeaf, IconDefinition } from
 import { ReactElement } from "react";
 
 export interface WorkExperienceElementProps {
-    date: string;
+    date: string; // Include 'Present' if still working.
     icon: IconDefinition;
     title: string;
     company: string;

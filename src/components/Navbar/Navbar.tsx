@@ -16,16 +16,6 @@ import { Fab, Action } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import "./Navbar.css";
 
-type NavItem = {
-  navLoc: string;
-  viewLoc: string;
-  icon: IconDefinition;
-  text: string;
-  mobileText?: string;
-  onlyForDesktop?: boolean;
-  hidden?: boolean;
-};
-
 interface ActionButton {
   navLoc: string;
   viewLoc: string;
@@ -36,7 +26,7 @@ interface ActionButton {
   hidden?: boolean;
 }
 
-interface NavButton {
+interface NavButtonProps {
   navLoc: string;
   viewLoc: string;
   icon: IconDefinition;
@@ -46,7 +36,7 @@ interface NavButton {
   hidden?: boolean;
 }
 
-const navItems: NavItem[] = [
+const navItems: NavButtonProps[] = [
   {
     navLoc: "about",
     viewLoc: "about-container",
@@ -79,6 +69,7 @@ const navItems: NavItem[] = [
     viewLoc: "blog",
     icon: faBlog,
     text: "Blog",
+    hidden: true,
   }
 ];
 
@@ -138,7 +129,7 @@ export default function Navbar() {
     </Action>
   );
 
-  const NavButton: React.FC<NavButton> = ({ navLoc, viewLoc, icon, text }) => (
+  const NavButton: React.FC<NavButtonProps> = ({ navLoc, viewLoc, icon, text }) => (
     <Col
       className="navItemText"
       key={text}

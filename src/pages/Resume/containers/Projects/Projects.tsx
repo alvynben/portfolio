@@ -68,7 +68,7 @@ export default function Projects() {
   return (
     <Col className="mt-4 mb-4" sm={12}>
       <h1 className="mt-4">Projects</h1>
-      <p style={{color: "#f00"}}><small>When I'm not cycling or cooking, this is how I spend my time.</small></p>
+      <p style={{color: "#f00"}}><small>When I'm not climbing or cooking, this is how I spend my time.</small></p>
       <Row>
       <Col sm={12} className="align-self-center">
           <small style={{color: "#fff"}}> {`[${isMobile ? 'Click on' :'Scroll over'} them to learn more!]`}</small>

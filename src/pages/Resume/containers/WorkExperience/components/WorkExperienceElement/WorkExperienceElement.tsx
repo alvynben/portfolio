@@ -28,8 +28,10 @@ export default function WorkExperienceElement(props: WorkExperienceElementProps)
         const isComponentAboveBottomOfViewport = rect.top < window.innerHeight;
         const isComponentBelowTopOfViewport = rect.top > 0;
         const isComponentWithinViewport = isComponentAboveBottomOfViewport && isComponentBelowTopOfViewport;
-        const isComponentBelowHalfOfViewport = rect.top > 1 / 2 * window.innerHeight;
-        const isInView = isComponentWithinViewport && isComponentBelowHalfOfViewport;
+        const isComponentBelowFirstThirdOfViewport = rect.top > 1 / 3 * window.innerHeight;
+        const isComponentAboveLastThirdOfViewport = rect.top < 2 / 3 * window.innerHeight;
+        const isComponentInMiddleOfViewport = isComponentBelowFirstThirdOfViewport && isComponentAboveLastThirdOfViewport;
+        const isInView = isComponentWithinViewport && isComponentInMiddleOfViewport;
         setIsInView(isInView);
       }
     }, [scrollPosition]);
@@ -68,7 +70,7 @@ export default function WorkExperienceElement(props: WorkExperienceElementProps)
         {skills && <p>{skills.join(" | ")}</p>}
         <Accordion className="mt-4">
           <Accordion.Item eventKey="0">
-            <Accordion.Header>What I'm doing</Accordion.Header>
+            <Accordion.Header>{date.includes('Present') ? `What I'm doing` : `What I did`}</Accordion.Header>
             <Accordion.Body>
               {points.map((point, index) => <li key={index}>{point}</li>)}
             </Accordion.Body>
