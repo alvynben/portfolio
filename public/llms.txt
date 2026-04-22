@@ -1,0 +1,18 @@
+Site: Alvin Ben Abraham Portfolio
+Canonical: https://alvinben.com/
+Author: Alvin Ben Abraham
+
+Summary:
+- Personal portfolio and resume for Alvin Ben Abraham, software engineer.
+- Includes experience, projects, skills, and blog posts.
+
+Primary pages:
+- Resume: https://alvinben.com/
+- About: https://alvinben.com/about/
+- Blog index: https://alvinben.com/blog/
+- Playground: https://alvinben.com/play/
+- Sitemap: https://alvinben.com/sitemap.xml
+
+Profiles:
+- LinkedIn: https://www.linkedin.com/in/alvinbenabraham/
+- GitHub: https://github.com/alvinbenabraham

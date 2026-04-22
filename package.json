@@ -31,7 +31,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy:hosting": "npm run predeploy && npx -y firebase-tools@latest deploy --only hosting"
   },
   "browserslist": {
     "production": [

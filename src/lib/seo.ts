@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const SITE_NAME = "Alvin Ben Abraham";
 export const SITE_DESCRIPTION = "A foray into Alvin Ben Abraham";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://alvinbenabraham.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://alvinben.com";
 export const DEFAULT_OG_IMAGE = "/android-chrome-512x512.png";
 
 interface BuildMetadataInput {
