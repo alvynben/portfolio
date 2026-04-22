@@ -1,9 +1,12 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import "./SocialMediaBar.css";
-import cvPDF from "assets/CV.pdf";
+
+const cvPDF = "/assets/CV.pdf";
 
 
 

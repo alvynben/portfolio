@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import "./Thumbnail.css";
 import { useSpring, animated } from "@react-spring/web";

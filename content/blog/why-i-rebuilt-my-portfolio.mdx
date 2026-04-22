@@ -1,0 +1,57 @@
+---
+title: "Why I Rebuilt My Portfolio"
+date: "2026-04-23"
+description: "Moving from Create React App to Next.js 14 with an MDX-powered blog."
+tags: ["nextjs", "mdx", "portfolio"]
+slug: "why-i-rebuilt-my-portfolio"
+---
+
+## TL;DR
+
+I migrated this site from **Create React App** to **Next.js 14** using the App
+Router, and wired up an MDX pipeline so I can write blog posts as plain files
+in `content/blog/`. This post is the canary that proves the new routing works
+end to end.
+
+## Why move off CRA?
+
+CRA has served the site faithfully for years, but a few reasons pushed me to
+switch:
+
+- CRA is effectively in maintenance mode; `react-scripts` has not kept pace.
+- I wanted static export + instant SEO: server-rendered `<head>`, real
+  `<meta>` tags, canonical URLs, OpenGraph, RSS and sitemap.
+- I wanted the option to write blog posts in Markdown with embedded React
+  components via MDX.
+
+## What's inside the new stack?
+
+| Concern        | Before            | After                          |
+| -------------- | ----------------- | ------------------------------ |
+| Framework      | CRA + React Router | Next.js 14 (App Router)        |
+| Content source | External REST API | Local MDX files                |
+| Deploys        | Firebase Hosting  | Firebase Hosting (still)       |
+| SEO            | Client-side only  | Static HTML with metadata      |
+| Feeds          | None              | `/sitemap.xml` and `/feed.xml` |
+
+## MDX in action
+
+MDX lets me mix Markdown with React. So a callout, code block, or interactive
+widget can live right inside a post:
+
+```tsx
+export default function Hello() {
+  return <p>Hello from a React component inside MDX!</p>;
+}
+```
+
+> All posts live in `content/blog/*.mdx` and are compiled to HTML at build
+> time. No runtime fetch, no spinner, no database.
+
+## What's next
+
+- Port any older posts into `content/blog/`
+- Add syntax highlighting with Shiki or rehype-pretty-code
+- Explore an `<Image>`-based project gallery on `/about`
+
+If you're reading this, the pipeline works. Onwards.

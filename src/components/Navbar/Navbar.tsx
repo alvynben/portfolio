@@ -1,3 +1,5 @@
+"use client";
+
 import {
   faAddressCard,
   faFilePdf,
@@ -11,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useWindowWidth from "hooks/useWindowWidth";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 import { Fab, Action } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 import "./Navbar.css";
@@ -38,7 +40,7 @@ interface NavButtonProps {
 
 const navItems: NavButtonProps[] = [
   {
-    navLoc: "about",
+    navLoc: "/about",
     viewLoc: "about-container",
     icon: faAddressCard,
     text: "About",
@@ -50,7 +52,7 @@ const navItems: NavButtonProps[] = [
     text: "Resume",
   },
   {
-    navLoc: "utilities",
+    navLoc: "/utilities",
     viewLoc: "utilities-container",
     icon: faToolbox,
     text: "Utilities",
@@ -58,27 +60,29 @@ const navItems: NavButtonProps[] = [
     hidden: true,
   },
   {
-    navLoc: "play",
+    navLoc: "/play",
     viewLoc: "play",
     icon: faGamepad,
     text: "Playground (WIP)",
     onlyForDesktop: true,
   },
   {
-    navLoc: "blog",
+    navLoc: "/blog",
     viewLoc: "blog",
     icon: faBlog,
     text: "Blog",
-    hidden: true,
-  }
+    hidden: false,
+  },
 ];
 
 export default function Navbar() {
   const [viewLocation, setViewLocation] = useState("about-container");
   const windowWidth = useWindowWidth();
   const isMobile = windowWidth <= 768;
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const moveToId = (id: any) => {
+  const moveToId = (id: string) => {
     const container = document.getElementById(id);
     if (container) window.scrollBy(0, container.getBoundingClientRect().top);
     else window.scrollBy(0, 0);
@@ -102,9 +106,12 @@ export default function Navbar() {
       default:
         break;
     }
-  }, [viewLocation]);
+  }, [viewLocation, pathname]);
 
-  const navigateTo = useNavigate();
+  const handleNavigate = (navLoc: string, viewLoc: string) => {
+    router.push(navLoc);
+    setViewLocation(viewLoc);
+  };
 
   const ActionButton: React.FC<ActionButton> = ({
     navLoc,
@@ -117,10 +124,7 @@ export default function Navbar() {
       style={{ display: "block", background: "#fff" }}
       text={mobileText ?? text}
       key={mobileText ?? text}
-      onClick={() => {
-        navigateTo(navLoc);
-        setViewLocation(viewLoc);
-      }}
+      onClick={() => handleNavigate(navLoc, viewLoc)}
     >
       <FontAwesomeIcon icon={icon} style={{ color: "#000" }} />
       <div>
@@ -129,14 +133,16 @@ export default function Navbar() {
     </Action>
   );
 
-  const NavButton: React.FC<NavButtonProps> = ({ navLoc, viewLoc, icon, text }) => (
+  const NavButton: React.FC<NavButtonProps> = ({
+    navLoc,
+    viewLoc,
+    icon,
+    text,
+  }) => (
     <Col
       className="navItemText"
       key={text}
-      onClick={() => {
-        navigateTo(navLoc);
-        setViewLocation(viewLoc);
-      }}
+      onClick={() => handleNavigate(navLoc, viewLoc)}
       sm={12}
     >
       <FontAwesomeIcon icon={icon} style={{ color: "white" }} /> <p>{text}</p>
@@ -151,13 +157,19 @@ export default function Navbar() {
           icon={<FontAwesomeIcon icon={faPlus} />}
           event="click"
         >
-          {navItems.map((navItem) => (navItem.onlyForDesktop || navItem.hidden) ? null : ActionButton(navItem))}
+          {navItems.map((navItem) =>
+            navItem.onlyForDesktop || navItem.hidden
+              ? null
+              : ActionButton(navItem)
+          )}
         </Fab>
       )}
       <Container className="navbar py-2 d-none d-sm-block col-sm-1 vh-100 position-fixed">
         <Row className="align-items-center h-100">
           <Col>
-          {navItems.map(navItem => navItem.hidden ? null : NavButton(navItem))}     
+            {navItems.map((navItem) =>
+              navItem.hidden ? null : NavButton(navItem)
+            )}
           </Col>
         </Row>
       </Container>

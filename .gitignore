@@ -10,8 +10,12 @@
 
 # production
 /build
+/.next/
+/out/
+/next-env.d.ts.bak
 .cache
 .firebase/
+*.tsbuildinfo
 
 # misc
 .DS_Store
