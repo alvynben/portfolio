@@ -203,14 +203,6 @@ function Playground() {
       context.fillStyle = "#000000";
       // context.fillRect(8, 8, 48, 24);
 
-      const img = new Image();
-      img.onload = drawActualImageSize;
-      img.src = "./keys.png";
-
-      function drawActualImageSize() {
-        context.drawImage(img, 500, 500);
-      }
-
       context.font = "30px monospace";
       context.fillText("Drive here to", 120, 200);
       context.fillText("see Interseed", 120, 250);

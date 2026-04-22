@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/index.css";
 import "@/App.css";
@@ -8,6 +11,12 @@ import "@/styles/prose.css";
 
 import RootShell from "components/RootShell/RootShell";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
+
+// FontAwesome normally injects its CSS at runtime, which causes icons to
+// render at their intrinsic (huge) size for a split second before the
+// stylesheet lands. We import the stylesheet above so Next bundles it,
+// and disable the runtime injection here.
+faConfig.autoAddCss = false;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -41,6 +41,13 @@ export default function WorkExperienceElement(props: WorkExperienceElementProps)
     return (
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
+        // `visible` bypasses the built-in IntersectionObserver-based show/hide,
+        // which ships via react-intersection-observer@8 inside
+        // react-vertical-timeline-component and no longer fires under React 18
+        // hydration -- without this, every card stays stuck at
+        // `visibility: hidden`. We keep the custom scroll-based box-shadow
+        // animation below via our own useScrollPosition hook.
+        visible
         contentStyle={{
           background: "rgb(0, 0, 0)",
           color: "#fff",
