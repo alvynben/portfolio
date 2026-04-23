@@ -14,8 +14,18 @@ function SocialMediaBar() {
   const [mouseInside, setMouseInside] = useState(false);
 
   const SocialMediaText = (text: string) => (
-    <p style={{fontSize: '12px', margin: 0, display: mouseInside ? 'block' : 'none'}}>{text}</p>
-  )
+    <p
+      style={{
+        fontSize: "11px",
+        margin: 0,
+        display: mouseInside ? "block" : "none",
+        color: "var(--site-ink-soft)",
+        fontFamily: "var(--site-mono)",
+      }}
+    >
+      {text}
+    </p>
+  );
   return (
     <div onMouseEnter={() => setMouseInside(true)} onMouseLeave={() => setMouseInside(false)} className="icon-bar">
       <div
@@ -37,7 +47,7 @@ function SocialMediaBar() {
         {SocialMediaText('GitHub')}
       </div>
       <a
-        style={{ textDecoration: "none", color: "#fff" }}
+        style={{ textDecoration: "none", color: "var(--site-ink-soft)" }}
         href={cvPDF}
         target="_blank"
         rel="noreferrer"

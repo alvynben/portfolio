@@ -1,3 +1,23 @@
 li:not(:last-child) {
     margin-bottom: 0.5em;
 }
+
+.co-curricular-card {
+  background: var(--site-bg-elev);
+  color: var(--site-ink);
+  border: 1px solid var(--site-rule);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.co-curricular-card .card-subtitle {
+  color: var(--site-ink-mute);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.co-curricular-card-body {
+  border-top: 1px solid var(--site-rule);
+}

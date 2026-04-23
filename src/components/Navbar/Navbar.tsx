@@ -121,14 +121,18 @@ export default function Navbar() {
     mobileText,
   }) => (
     <Action
-      style={{ display: "block", background: "#fff" }}
+      style={{
+        display: "block",
+        background: "var(--site-bg-elev)",
+        border: "1px solid var(--site-rule)",
+      }}
       text={mobileText ?? text}
       key={mobileText ?? text}
       onClick={() => handleNavigate(navLoc, viewLoc)}
     >
-      <FontAwesomeIcon icon={icon} style={{ color: "#000" }} />
+      <FontAwesomeIcon icon={icon} style={{ color: "var(--site-ink)" }} />
       <div>
-        <p style={{ fontSize: "0.5em", color: "#000" }}>{mobileText ?? text}</p>
+        <p style={{ fontSize: "0.5em", color: "var(--site-ink-soft)" }}>{mobileText ?? text}</p>
       </div>
     </Action>
   );
@@ -145,7 +149,7 @@ export default function Navbar() {
       onClick={() => handleNavigate(navLoc, viewLoc)}
       sm={12}
     >
-      <FontAwesomeIcon icon={icon} style={{ color: "white" }} /> <p>{text}</p>
+      <FontAwesomeIcon icon={icon} style={{ color: "var(--site-ink-soft)" }} /> <p>{text}</p>
     </Col>
   );
 
@@ -153,7 +157,7 @@ export default function Navbar() {
     <>
       {isMobile && (
         <Fab
-          mainButtonStyles={{ backgroundColor: "#36f" }}
+          mainButtonStyles={{ backgroundColor: "var(--site-accent)", color: "var(--site-bg)" }}
           icon={<FontAwesomeIcon icon={faPlus} />}
           event="click"
         >

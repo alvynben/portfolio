@@ -10,8 +10,7 @@ slug: "why-i-rebuilt-my-portfolio"
 
 I migrated this site from **Create React App** to **Next.js 14** using the App
 Router, and wired up an MDX pipeline so I can write blog posts as plain files
-in `content/blog/`. This post is the canary that proves the new routing works
-end to end.
+in `content/blog/`. This post is a proof of concept.
 
 ## Why move off CRA?
 
@@ -23,6 +22,11 @@ switch:
   `<meta>` tags, canonical URLs, OpenGraph, RSS and sitemap.
 - I wanted the option to write blog posts in Markdown with embedded React
   components via MDX.
+
+<aside className="callout">
+  <div className="callout-label">Author's note</div>
+  <p>None of this would've happened if I hadn't been staring at a <code>react-scripts</code> security warning for six months straight.</p>
+</aside>
 
 ## What's inside the new stack?
 
@@ -46,12 +50,11 @@ export default function Hello() {
 ```
 
 > All posts live in `content/blog/*.mdx` and are compiled to HTML at build
-> time. No runtime fetch, no spinner, no database.
+> time. Anything to skip those monthly hosting bills.
 
-## What's next
+Interactive widgets work too. Here's a tiny demo rendered inline —
+the kind of thing that'd be painful to ship as a plain Markdown image:
 
-- Port any older posts into `content/blog/`
-- Add syntax highlighting with Shiki or rehype-pretty-code
-- Explore an `<Image>`-based project gallery on `/about`
+<DemoEmbed />
 
-If you're reading this, the pipeline works. Onwards.
+For now, it seems extensible enough for any future blog posts. Let's see how it goes.

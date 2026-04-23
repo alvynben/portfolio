@@ -1,0 +1,9 @@
+.education-logo {
+  max-width: 160px;
+  width: 100%;
+  filter: invert(1) saturate(0.7);
+}
+
+.education-copy p {
+  color: var(--site-ink-soft);
+}

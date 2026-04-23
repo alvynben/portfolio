@@ -11,6 +11,7 @@ import Projects from "./containers/Projects/Projects";
 import Skills from "./containers/Skills/Skills";
 import Education from "./containers/Education/Education";
 import CoCurricular from "./containers/CoCurricular/CoCurricular";
+import "./Resume.css";
 
 const cvPDF = "/assets/CV.pdf";
 
@@ -21,7 +22,8 @@ const Header = () => (
     sm={{ span: 8, offset: 4 }}
   >
     <h1 id="aboutTitle">ALVIN BEN ABRAHAM</h1>
-    <ButtonGroup size="sm">
+    <p className="resume-lede mb-3">Frontend engineer crafting thoughtful interfaces</p>
+    <ButtonGroup size="sm" className="resume-header-actions">
       <Button
         onClick={() => {
           window.open("https://linkedin.com/in/alvinbenabraham", "_blank");

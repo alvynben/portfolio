@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "portfolio-236cf"
-  }
+  },
+  "targets": {
+    "portfolio-236cf": {
+      "hosting": {
+        "app": [
+          "portfolio-236cf"
+        ],
+        "www": [
+          "portfolio-236cf-e0272"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

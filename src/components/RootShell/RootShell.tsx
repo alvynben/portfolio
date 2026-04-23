@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { usePathname } from "next/navigation";
 
 import Navbar from "components/Navbar/Navbar";
 import SocialMediaBar from "components/SocialMediaBar/SocialMediaBar";
@@ -15,6 +16,12 @@ export default function RootShell({ children }: RootShellProps) {
   const [proceedAnyway, setProceedAnyway] = useState(true);
   const windowWidth = useWindowWidth();
   const isMobile = windowWidth <= 768;
+  const pathname = usePathname();
+  const isV2Route = pathname === "/" || pathname.startsWith("/blog");
+
+  if (isV2Route) {
+    return <>{children}</>;
+  }
 
   if (isMobile && !proceedAnyway) {
     return (

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 
-import Resume from "views/Resume/Resume";
+import PortfolioV2 from "views/PortfolioV2/PortfolioV2";
+import { getAllPosts } from "@/lib/posts";
 import { buildMetadata } from "@/lib/seo";
+import "@/views/PortfolioV2/portfolio-v2.css";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Resume",
-  description:
-    "The resume, work experience, projects, and skills of Alvin Ben Abraham.",
+  title: "alvin ben abraham",
+  description: "Full-stack engineer building user-first interfaces.",
   path: "/",
 });
 
 export default function HomePage() {
-  return <Resume />;
+  const posts = getAllPosts();
+  return <PortfolioV2 posts={posts} />;
 }

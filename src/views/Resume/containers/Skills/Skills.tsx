@@ -9,24 +9,16 @@ const Skill: React.FC<{
   noOfStars?: number;
   noOfHalfStars?: number;
 }> = ({ skillName, noOfStars = 0, noOfHalfStars = 0 }) => (
-  <div className="d-flex justify-content-center mb-3">
-    <p
-      style={{
-        display: "inline-block",
-        marginRight: "1em",
-        marginBottom: 0,
-        maxWidth: "9em",
-        width: "9em",
-      }}
-    >
+  <div className="d-flex justify-content-center mb-3 skill-row">
+    <p className="skill-name">
       {skillName}
     </p>
-    <div style={{display: 'flex', alignItems: 'center', width: '5em' }}>
+    <div className="skill-stars">
       {[...Array(noOfStars)].map((num, idx) => {
-        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`full-${idx}`} color="#ff0" icon={faStar} />;
+        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`full-${idx}`} color="var(--site-accent)" icon={faStar} />;
       })}
       {[...Array(noOfHalfStars)].map((num, idx) => {
-        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`half-${idx}`} color="#ff0" icon={faStarHalf} />;
+        return <FontAwesomeIcon style={{display: 'inline-block'}} key={`half-${idx}`} color="var(--site-accent)" icon={faStarHalf} />;
       })}
     </div>
   </div>
@@ -36,12 +28,12 @@ export default function Skills() {
   return (
     <Col className="mt-4 mb-4" sm={12}>
       <h1>Skills</h1>
-      <p style={{ color: "#f00" }}>
+      <p className="resume-section-intro">
         <small>A craftsman is only as good as his tools. Here are mine.</small>
       </p>
-      <Row style={{justifyContent: 'center'}}>
+      <Row className="justify-content-center">
         <Col className="mt-4" sm={12} md={4}>
-          <h2 className="mb-4" style={{whiteSpace: 'nowrap'}}>Front End</h2>
+          <h2 className="mb-4 skill-group-title">Front End</h2>
           <div>
             <Skill skillName="React" noOfStars={3} />
             <Skill skillName="TypeScript" noOfStars={3} />

@@ -50,7 +50,7 @@ export default function Thumbnail(props: ThumbnailProps) {
             objectFit: "cover",
             width: "100%",
             height: "30vh",
-            borderBottom: "1px solid grey",
+            borderBottom: "1px solid var(--site-rule)",
           }}
           
         />
