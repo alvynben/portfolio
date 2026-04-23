@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useSpring, animated, config } from "react-spring";
+import "./Education.css";
 
 const nusImg = "/assets/nus-white.png";
 
@@ -43,15 +44,15 @@ export default function Education() {
   return (
     <Col className="mt-4" sm={12}>
       <h1 className="mt-4">Education</h1>
-      <p style={{ color: "#f00" }}>
+      <p className="resume-section-intro">
         <small>The crucible where I was forged. Now featuring Subway!</small>
       </p>
 
       <Row className="align-items-center justify-content-center">
         <Col sm={3}>
-          <img src={nusImg} alt="NUS Logo" />
+          <img src={nusImg} alt="NUS Logo" className="education-logo" />
         </Col>
-        <Col sm={6} className="h-100">
+        <Col sm={6} className="h-100 education-copy">
           <p>Bachelor of Engineering (Computer Engineering) Honours</p>
           <p>Second Major in Innovation and Design</p>
           <Number />

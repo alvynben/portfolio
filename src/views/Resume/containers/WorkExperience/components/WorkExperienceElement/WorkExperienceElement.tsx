@@ -49,18 +49,21 @@ export default function WorkExperienceElement(props: WorkExperienceElementProps)
         // animation below via our own useScrollPosition hook.
         visible
         contentStyle={{
-          background: "rgb(0, 0, 0)",
-          color: "#fff",
-          boxShadow: `0 3px 0 ${ isInView ? "#36f" : "#fff"}`,
+          background: "var(--site-bg-elev)",
+          color: "var(--site-ink)",
+          border: "1px solid var(--site-rule)",
+          borderRadius: "12px",
+          boxShadow: `0 8px 24px -20px ${ isInView ? "var(--site-accent)" : "var(--site-ink-mute)"}`,
           transition: "box-shadow 1s",
         }}
         contentArrowStyle={{
-          borderRight: "7px solid  #3366ff",
+          borderRight: "7px solid var(--site-accent)",
         }}
         date={date}
         iconStyle={{
-          background: "rgb(255, 255, 255)",
-          color: "#000",
+          background: "var(--site-bg)",
+          color: "var(--site-ink)",
+          border: "1px solid var(--site-rule)",
           textAlign: "center",
         }}
         icon={

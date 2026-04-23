@@ -1,0 +1,78 @@
+:root {
+  --site-bg: oklch(98.5% 0.005 80);
+  --site-bg-elev: oklch(96.5% 0.008 80);
+  --site-bg-sunk: oklch(94% 0.01 80);
+  --site-ink: oklch(22% 0.015 60);
+  --site-ink-soft: oklch(45% 0.012 60);
+  --site-ink-mute: oklch(62% 0.008 60);
+  --site-rule: oklch(89% 0.01 80);
+  --site-accent: oklch(60% 0.18 38);
+  --site-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --site-sans: "Geist", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --site-mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+#resume-container {
+  color: var(--site-ink);
+  font-family: var(--site-sans);
+}
+
+#resume-container h1,
+#resume-container h2 {
+  font-family: var(--site-serif);
+  letter-spacing: -0.02em;
+  color: var(--site-ink);
+}
+
+#resume-container h1 {
+  font-size: clamp(2rem, 4.8vw, 3.8rem);
+  line-height: 1.02;
+  font-weight: 380;
+}
+
+#resume-container h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 360;
+}
+
+.resume-container {
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.resume-lede {
+  color: var(--site-ink-soft);
+  font-family: var(--site-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.resume-section-intro {
+  color: var(--site-accent) !important;
+  font-family: var(--site-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.resume-header-actions .btn {
+  border-radius: 999px;
+  border: 1px solid var(--site-rule);
+  background: transparent;
+  color: var(--site-ink);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.resume-header-actions .btn:hover {
+  background: var(--site-ink);
+  color: var(--site-bg);
+  transform: translateY(-1px);
+}
+
+.resume-header-actions .btn:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--site-accent) 30%, transparent);
+}

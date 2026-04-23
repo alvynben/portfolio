@@ -1,10 +1,12 @@
 .work-experience h4 {
     font-size: medium;
+    color: var(--site-ink);
 }
 
 .work-experience li {
     font-size: small;
     margin-bottom: 1em;
+    color: var(--site-ink-soft);
 }
 
 .accordion-body {
@@ -13,4 +15,23 @@
 
 .work-experience button {
     font-size: small;
+}
+
+.work-experience .vertical-timeline-element-date {
+  color: var(--site-ink-mute);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+}
+
+.work-experience .accordion-item,
+.work-experience .accordion-button,
+.work-experience .accordion-body {
+  background: var(--site-bg);
+  color: var(--site-ink-soft);
+  border-color: var(--site-rule);
+}
+
+.work-experience .accordion-button:not(.collapsed) {
+  color: var(--site-ink);
+  box-shadow: none;
 }

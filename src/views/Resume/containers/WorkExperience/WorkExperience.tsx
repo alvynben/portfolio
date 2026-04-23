@@ -14,7 +14,7 @@ export default function WorkExperience() {
   return (
     <Col className="work-experience" sm={12}>
       <h1 className="mt-4">Work Experience</h1>
-      <p style={{ color: "#f00" }}>
+      <p className="resume-section-intro">
         <small>All my second homes.</small>
       </p>
       <VerticalTimeline>

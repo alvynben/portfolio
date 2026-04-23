@@ -1,49 +1,56 @@
 /* Thumbnail */
 
 .thumbnail {
-    position: relative;
-    border-radius: 10px 10px 10px 10px !important;
-  }
+  position: relative;
+  border-radius: 16px !important;
+  border: 1px solid var(--site-rule);
+  background: var(--site-bg-elev);
+  overflow: hidden;
+}
   
-  .thumbnail-description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    width: 35vh;
-    height: 50vh;
-    padding: 1em;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-    border-radius: 5px 5px 5px 5px;
-    border: #fff 5px solid;
-    background: #000;
-    color: #fff;
-    text-align: center;
-  }
+.thumbnail-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 35vh;
+  height: 50vh;
+  padding: 1em;
+  border-radius: 12px;
+  border: 1px solid var(--site-rule);
+  background: var(--site-bg-elev);
+  color: var(--site-ink);
+  text-align: center;
+}
   
-  .thumbnail-description p {
-    color: #fff;
-    vertical-align: middle;
-  }
+.thumbnail-description p {
+  color: var(--site-ink-soft);
+  vertical-align: middle;
+}
   
-  .thumbnail-title {
-    bottom: 3rem;
-    /* color: #d61a1f; */
-    color: #3366ff;
-  }
+.thumbnail-title {
+  bottom: 3rem;
+  color: var(--site-ink);
+  font-family: var(--site-serif);
+}
   
-  .thumbnail-category {
-    bottom: 1rem;
-    color: #fff;
-  }
+.thumbnail-category {
+  bottom: 1rem;
+  color: var(--site-ink-soft);
+  font-family: var(--site-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
   
-  .thumbnail-text {
-    background-color: #000;
-    padding: 5px;
-    max-height: 10vh;
-  }
+.thumbnail-text {
+  background-color: var(--site-bg-elev);
+  border-top: 1px solid var(--site-rule);
+  padding: 8px 10px;
+  max-height: 10vh;
+}
   
   .project {
     position: relative;
@@ -77,11 +84,10 @@
     overflow: hidden;
   }
   
-  .project-description p {
-    color: #fff;
-  }
+.project-description p {
+  color: var(--site-ink-soft);
+}
   
-  .project-description a {
-    /* color: #d61a1f; */
-    color: #3366ff;
-  }
+.project-description a {
+  color: var(--site-accent);
+}

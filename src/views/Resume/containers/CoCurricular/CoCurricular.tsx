@@ -6,7 +6,7 @@ function CoCurricular() {
   return (
     <Col className="mt-4 mb-4" sm={12}>
       <h1 className="mt-4">Extra Curricular</h1>
-      <p style={{ color: "#f00" }}>
+      <p className="resume-section-intro">
         <small>
           Apparently, there is more to life than just coding, cycling, and
           cooking. Huh, who knew?
@@ -16,13 +16,13 @@ function CoCurricular() {
         <Col sm={12} className="align-self-center">
           <Row className="g-4 justify-content-around align-items-center">
             <Col sm={12}>
-              <Card style={{ background: "#000", color: "#fff" }}>
-                <Card.Header style={{ textAlign: "left" }}>
+              <Card className="co-curricular-card">
+                <Card.Header className="text-start">
                   <Card.Title>President, NUS Innovation and Design Programme Students' Club</Card.Title>
                   <Card.Subtitle>Dec 2021 - Present</Card.Subtitle>
                 </Card.Header>
-                <Card.Body style={{ textAlign: "left", borderTop: '3px solid #fff' }}>
-                  <ul style={{marginBottom: 0}}>
+                <Card.Body className="text-start co-curricular-card-body">
+                  <ul className="mb-0">
                     <li>
                       Invented outreach opportunities for 3 NUS startups by
                       partnering with external NUS organisations
@@ -38,16 +38,16 @@ function CoCurricular() {
               </Card>
             </Col>
             <Col sm={12}>
-              <Card style={{ background: "#000", color: "#fff" }}>
-                <Card.Header style={{ textAlign: "left" }}>
+              <Card className="co-curricular-card">
+                <Card.Header className="text-start">
                   <Card.Title>
                     President, ACJC (Anglo-Chinese JC) Debate and Oratorical
                     Society
                   </Card.Title>
                   <Card.Subtitle>Jun 2016 - Jun 2017</Card.Subtitle>
                 </Card.Header>
-                <Card.Body style={{ textAlign: "left", borderTop: '3px solid #fff' }}>
-                  <ul style={{marginBottom: 0}}>
+                <Card.Body className="text-start co-curricular-card-body">
+                  <ul className="mb-0">
                     <li>
                       Planned and organized regional and international debating
                       championships with over 200 participants

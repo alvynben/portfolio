@@ -24,6 +24,11 @@ switch:
 - I wanted the option to write blog posts in Markdown with embedded React
   components via MDX.
 
+<aside className="callout">
+  <div className="callout-label">Author's note</div>
+  <p>None of this would've happened if I hadn't been staring at a <code>react-scripts</code> security warning for six months straight.</p>
+</aside>
+
 ## What's inside the new stack?
 
 | Concern        | Before            | After                          |
@@ -47,6 +52,11 @@ export default function Hello() {
 
 > All posts live in `content/blog/*.mdx` and are compiled to HTML at build
 > time. No runtime fetch, no spinner, no database.
+
+Interactive widgets work too. Here's a tiny demo rendered inline —
+the kind of thing that'd be painful to ship as a plain Markdown image:
+
+<DemoEmbed />
 
 ## What's next
 
