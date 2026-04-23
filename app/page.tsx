@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import "@/views/PortfolioV2/portfolio-v2.css";
 
 export const metadata: Metadata = buildMetadata({
-  title: "alvinben",
-  description: "Frontend engineer building user-first interfaces.",
+  title: "alvin ben abraham",
+  description: "Full-stack engineer building user-first interfaces.",
   path: "/",
 });
 
