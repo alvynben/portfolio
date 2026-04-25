@@ -274,9 +274,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <a className="toc-sharelink" href={postUrl}>
                   Copy link
                 </a>
-                <a className="toc-sharelink" href={`https://x.com/intent/post?url=${encodeURIComponent(`${SITE_URL}/blog/${post.slug}/`)}`}>
-                  Twitter
-                </a>
                 <a className="toc-sharelink" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE_URL}/blog/${post.slug}/`)}`}>
                   LinkedIn
                 </a>
@@ -293,7 +290,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <div className="signoff-meta">Frontend Engineer · Singapore · SGT</div>
                 </div>
                 <div className="post-share">
-                  <a href={`https://x.com/intent/post?url=${encodeURIComponent(postUrl)}`}>Discuss on Twitter</a>
                   <a href="mailto:alvinbenabraham@gmail.com">Reply by email</a>
                 </div>
               </footer>
